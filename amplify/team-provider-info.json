@@ -1,0 +1,20 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-insightinvestigation-dev-fc306-authRole",
+      "UnauthRoleArn": "arn:aws:iam::664416179448:role/amplify-insightinvestigation-dev-fc306-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::664416179448:role/amplify-insightinvestigation-dev-fc306-authRole",
+      "Region": "ap-southeast-2",
+      "DeploymentBucketName": "amplify-insightinvestigation-dev-fc306-deployment",
+      "UnauthRoleName": "amplify-insightinvestigation-dev-fc306-unauthRole",
+      "StackName": "amplify-insightinvestigation-dev-fc306",
+      "StackId": "arn:aws:cloudformation:ap-southeast-2:664416179448:stack/amplify-insightinvestigation-dev-fc306/e4e0cc30-41e1-11f0-8e10-06def3ba2607",
+      "AmplifyAppId": "d1ah69e151pvzc"
+    },
+    "categories": {
+      "function": {
+        "contactForm": {}
+      }
+    }
+  }
+}
