@@ -3,6 +3,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
+import Image from 'next/image'
 
 const services = [
   {
@@ -10,6 +11,7 @@ const services = [
     name: 'Surveillance & Monitoring',
     description: 'Professional observation. Reliable evidence. Complete discretion.',
     longDescription: 'Whether you\'re dealing with suspected dishonesty, workplace misconduct, insurance fraud, or personal safety concerns — discreet surveillance can help you uncover the facts.',
+    image: '/images/surveillance_image_converted.jpg',
     features: [
       'Static or mobile surveillance',
       'Covert photography and video',
@@ -31,6 +33,7 @@ const services = [
     name: 'Cheating Partner Investigations',
     description: 'Discreet. Sensitive. Confidential.',
     longDescription: 'Suspecting infidelity can be emotionally overwhelming. Whether it\'s a change in routine, unusual behaviour, or just a gut feeling — not knowing can be just as painful as knowing.',
+    image: '/images/cheating_partner_image_converted.jpg',
     features: [
       'Covert surveillance',
       'Vehicle and location tracking (legally compliant)',
@@ -51,6 +54,7 @@ const services = [
     name: 'School Zoning Checks',
     description: 'Verifying address claims. Supporting fair enrolment.',
     longDescription: 'In-zone enrolment fraud can put pressure on school resources and create unfair advantages. Our zoning checks provide discreet, factual evidence to confirm residential claims.',
+    image: '/images/School Zoning.png',
     features: [
       'Surveillance of property access and routines',
       'Tenancy and ownership record verification',
@@ -71,6 +75,7 @@ const services = [
     name: 'Background Checks',
     description: 'Know who you\'re dealing with — before it matters.',
     longDescription: 'Whether you\'re hiring a new employee, entering into a relationship, or considering a business deal — understanding someone\'s background can help you make smarter, safer decisions.',
+    image: '/images/Background Checks.png',
     features: [
       'Criminal convictions or police history',
       'Employment and education claims',
@@ -93,6 +98,7 @@ const services = [
     name: 'Stalker & Harassment Investigations',
     description: 'Protect your peace. Regain control.',
     longDescription: 'Being followed, watched, or harassed — online or in person — can leave you feeling unsafe and powerless. We provide discreet, professional support to help you gather evidence, understand your options, and take steps to protect yourself.',
+    image: '/images/Stalker.jpg',
     features: [
       'Surveillance to confirm patterns of behaviour',
       'Digital footprint analysis (including social media)',
@@ -115,6 +121,7 @@ const services = [
     name: 'Tracing Missing Persons',
     description: 'Reconnecting people. Recovering truth.',
     longDescription: 'Whether it\'s a long-lost family member, someone avoiding legal responsibility, or a person who has simply vanished — not knowing where they are can leave you feeling stuck and helpless.',
+    image: '/images/Missing Person Image.png',
     features: [
       'Investigative database searches',
       'Public records and digital footprint analysis',
@@ -166,15 +173,30 @@ export default function Services() {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:max-w-none">
           {services.map((service, index) => (
-            <motion.div
-              key={service.id}
-              id={service.id}
-              className="grid grid-cols-1 gap-x-8 gap-y-16 lg:grid-cols-2 lg:items-start pt-16 first:pt-0"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: index * 0.1 }}
-            >
+            <div key={service.id}>
+              {index > 0 && (
+                <div className="py-16">
+                  <div className="w-full border-t border-gray-200" />
+                </div>
+              )}
+              <motion.div
+                id={service.id}
+                className="grid grid-cols-1 gap-x-8 gap-y-16 lg:grid-cols-2 lg:items-start py-16 scroll-mt-24"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: index * 0.1 }}
+              >
               <div className="lg:sticky lg:top-24">
+                <div className="relative mb-8 overflow-hidden rounded-xl">
+                  <Image
+                    src={service.image}
+                    alt={service.name}
+                    width={600}
+                    height={400}
+                    className="aspect-[3/2] w-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+                </div>
                 <h2 className="text-3xl font-bold tracking-tight text-foreground font-serif">{service.name}</h2>
                 <p className="mt-4 text-xl text-accent">{service.description}</p>
                 <p className="mt-6 text-base leading-7 text-secondary">{service.longDescription}</p>
@@ -211,7 +233,8 @@ export default function Services() {
                   </div>
                 </dl>
               </div>
-            </motion.div>
+              </motion.div>
+            </div>
           ))}
         </div>
       </div>

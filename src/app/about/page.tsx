@@ -3,6 +3,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export default function About() {
   return (
@@ -26,6 +27,23 @@ export default function About() {
             Shining light on the truth.
           </motion.p>
         </div>
+
+        <motion.div
+          className="mx-auto mt-16 mb-16 max-w-4xl"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+        >
+          <div className="relative h-96 overflow-hidden rounded-xl">
+            <Image
+              src="/images/Background Checks.png"
+              alt="Professional investigation workspace"
+              fill
+              className="object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+          </div>
+        </motion.div>
 
         <motion.div
           className="mx-auto mt-16 max-w-2xl lg:mx-0 lg:max-w-none"

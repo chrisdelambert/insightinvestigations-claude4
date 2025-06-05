@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react'
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -85,132 +86,127 @@ export default function Contact() {
         </div>
 
         <motion.div
-          className="mx-auto mt-16 max-w-xl"
+          className="mx-auto mt-16 max-w-2xl"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
         >
-          <form onSubmit={handleSubmit} className="space-y-8">
+          <div className="bg-white rounded-2xl shadow-xl p-8 lg:p-12">
+            <form onSubmit={handleSubmit} className="space-y-8">
             <div className="space-y-6">
               <div>
-                <label htmlFor="name" className="block text-sm font-medium leading-6 text-foreground">
-                  Name
+                <label htmlFor="name" className="block text-sm font-semibold leading-6 text-gray-900 mb-2">
+                  Name *
                 </label>
-                <div className="mt-2">
-                  <input
-                    type="text"
-                    name="name"
-                    id="name"
-                    required
-                    value={formData.name}
-                    onChange={handleChange}
-                    className="block w-full rounded-md border-0 bg-accent/5 px-3.5 py-2 text-foreground shadow-sm ring-1 ring-inset ring-accent/10 focus:ring-2 focus:ring-inset focus:ring-accent sm:text-sm sm:leading-6"
-                  />
-                </div>
+                <input
+                  type="text"
+                  name="name"
+                  id="name"
+                  required
+                  value={formData.name}
+                  onChange={handleChange}
+                  className="block w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-gray-900 placeholder-gray-500 shadow-sm focus:border-gray-900 focus:ring-1 focus:ring-gray-900 transition-colors sm:text-sm"
+                  placeholder="Your full name"
+                />
               </div>
 
               <div>
-                <label htmlFor="email" className="block text-sm font-medium leading-6 text-foreground">
-                  Email
+                <label htmlFor="email" className="block text-sm font-semibold leading-6 text-gray-900 mb-2">
+                  Email *
                 </label>
-                <div className="mt-2">
-                  <input
-                    type="email"
-                    name="email"
-                    id="email"
-                    required
-                    value={formData.email}
-                    onChange={handleChange}
-                    className="block w-full rounded-md border-0 bg-accent/5 px-3.5 py-2 text-foreground shadow-sm ring-1 ring-inset ring-accent/10 focus:ring-2 focus:ring-inset focus:ring-accent sm:text-sm sm:leading-6"
-                  />
-                </div>
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  required
+                  value={formData.email}
+                  onChange={handleChange}
+                  className="block w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-gray-900 placeholder-gray-500 shadow-sm focus:border-gray-900 focus:ring-1 focus:ring-gray-900 transition-colors sm:text-sm"
+                  placeholder="your.email@example.com"
+                />
               </div>
 
               <div>
-                <label htmlFor="phone" className="block text-sm font-medium leading-6 text-foreground">
-                  Phone (optional)
+                <label htmlFor="phone" className="block text-sm font-semibold leading-6 text-gray-900 mb-2">
+                  Phone <span className="text-gray-500 font-normal">(optional)</span>
                 </label>
-                <div className="mt-2">
-                  <input
-                    type="tel"
-                    name="phone"
-                    id="phone"
-                    value={formData.phone}
-                    onChange={handleChange}
-                    className="block w-full rounded-md border-0 bg-accent/5 px-3.5 py-2 text-foreground shadow-sm ring-1 ring-inset ring-accent/10 focus:ring-2 focus:ring-inset focus:ring-accent sm:text-sm sm:leading-6"
-                  />
-                </div>
+                <input
+                  type="tel"
+                  name="phone"
+                  id="phone"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  className="block w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-gray-900 placeholder-gray-500 shadow-sm focus:border-gray-900 focus:ring-1 focus:ring-gray-900 transition-colors sm:text-sm"
+                  placeholder="021 123 4567"
+                />
               </div>
 
               <div>
-                <label htmlFor="service" className="block text-sm font-medium leading-6 text-foreground">
-                  Service of Interest
+                <label htmlFor="service" className="block text-sm font-semibold leading-6 text-gray-900 mb-2">
+                  Service of Interest *
                 </label>
-                <div className="mt-2">
-                  <select
-                    name="service"
-                    id="service"
-                    required
-                    value={formData.service}
-                    onChange={handleChange}
-                    className="block w-full rounded-md border-0 bg-accent/5 px-3.5 py-2 text-foreground shadow-sm ring-1 ring-inset ring-accent/10 focus:ring-2 focus:ring-inset focus:ring-accent sm:text-sm sm:leading-6"
-                  >
-                    <option value="">Select a service</option>
-                    <option value="surveillance">Surveillance & Monitoring</option>
-                    <option value="cheating-partner">Cheating Partner Investigations</option>
-                    <option value="school-zoning">School Zoning Checks</option>
-                    <option value="background-checks">Background Checks</option>
-                    <option value="stalker-harassment">Stalker & Harassment Investigations</option>
-                    <option value="missing-persons">Tracing Missing Persons</option>
-                    <option value="document-serving">Document Serving</option>
-                    <option value="other">Other</option>
-                  </select>
-                </div>
+                <select
+                  name="service"
+                  id="service"
+                  required
+                  value={formData.service}
+                  onChange={handleChange}
+                  className="block w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-gray-900 shadow-sm focus:border-gray-900 focus:ring-1 focus:ring-gray-900 transition-colors sm:text-sm"
+                >
+                  <option value="">Select a service</option>
+                  <option value="surveillance">Surveillance & Monitoring</option>
+                  <option value="cheating-partner">Cheating Partner Investigations</option>
+                  <option value="school-zoning">School Zoning Checks</option>
+                  <option value="background-checks">Background Checks</option>
+                  <option value="stalker-harassment">Stalker & Harassment Investigations</option>
+                  <option value="missing-persons">Tracing Missing Persons</option>
+                  <option value="document-serving">Document Serving</option>
+                  <option value="other">Other</option>
+                </select>
               </div>
 
               <div>
-                <label htmlFor="message" className="block text-sm font-medium leading-6 text-foreground">
-                  Message
+                <label htmlFor="message" className="block text-sm font-semibold leading-6 text-gray-900 mb-2">
+                  Message *
                 </label>
-                <div className="mt-2">
-                  <textarea
-                    name="message"
-                    id="message"
-                    rows={4}
-                    required
-                    value={formData.message}
-                    onChange={handleChange}
-                    className="block w-full rounded-md border-0 bg-accent/5 px-3.5 py-2 text-foreground shadow-sm ring-1 ring-inset ring-accent/10 focus:ring-2 focus:ring-inset focus:ring-accent sm:text-sm sm:leading-6"
-                  />
-                </div>
-                <p className="mt-2 text-sm leading-6 text-secondary">Brief description of your situation.</p>
+                <textarea
+                  name="message"
+                  id="message"
+                  rows={5}
+                  required
+                  value={formData.message}
+                  onChange={handleChange}
+                  className="block w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-gray-900 placeholder-gray-500 shadow-sm focus:border-gray-900 focus:ring-1 focus:ring-gray-900 transition-colors sm:text-sm resize-none"
+                  placeholder="Please provide a brief description of your situation and how we can help..."
+                />
+                <p className="mt-2 text-sm leading-6 text-gray-600">All communication is kept strictly confidential.</p>
               </div>
 
-              <div className="space-y-4">
-                <div className="flex items-center">
+              <div className="space-y-4 bg-gray-50 p-4 rounded-lg">
+                <div className="flex items-start">
                   <input
                     type="checkbox"
                     name="preferWoman"
                     id="preferWoman"
                     checked={formData.preferWoman}
                     onChange={handleChange}
-                    className="h-4 w-4 rounded border-accent/10 bg-accent/5 text-accent focus:ring-accent"
+                    className="h-4 w-4 rounded border-gray-300 text-gray-900 focus:ring-gray-900 mt-0.5"
                   />
-                  <label htmlFor="preferWoman" className="ml-3 text-sm leading-6 text-foreground">
+                  <label htmlFor="preferWoman" className="ml-3 text-sm leading-6 text-gray-700">
                     I would prefer to speak with a woman
                   </label>
                 </div>
 
-                <div className="flex items-center">
+                <div className="flex items-start">
                   <input
                     type="checkbox"
                     name="callbackPreferred"
                     id="callbackPreferred"
                     checked={formData.callbackPreferred}
                     onChange={handleChange}
-                    className="h-4 w-4 rounded border-accent/10 bg-accent/5 text-accent focus:ring-accent"
+                    className="h-4 w-4 rounded border-gray-300 text-gray-900 focus:ring-gray-900 mt-0.5"
                   />
-                  <label htmlFor="callbackPreferred" className="ml-3 text-sm leading-6 text-foreground">
+                  <label htmlFor="callbackPreferred" className="ml-3 text-sm leading-6 text-gray-700">
                     I prefer a callback over email response
                   </label>
                 </div>
@@ -221,9 +217,19 @@ export default function Contact() {
               <button
                 type="submit"
                 disabled={status === 'loading'}
-                className="w-full rounded-md bg-accent/10 px-3.5 py-2.5 text-center text-sm font-semibold text-accent shadow-sm hover:bg-accent/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full rounded-lg bg-gray-900 px-6 py-4 text-center text-base font-semibold text-white shadow-lg hover:bg-gray-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                {status === 'loading' ? 'Sending...' : 'Send Message'}
+                {status === 'loading' ? (
+                  <span className="flex items-center justify-center">
+                    <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                    </svg>
+                    Sending Message...
+                  </span>
+                ) : (
+                  'Send Confidential Message'
+                )}
               </button>
               {status === 'success' && (
                 <p className="mt-4 text-sm leading-6 text-green-600 text-center">
@@ -235,11 +241,12 @@ export default function Contact() {
                   {errorMessage}
                 </p>
               )}
-              <p className="mt-4 text-sm leading-6 text-secondary text-center">
+              <p className="mt-4 text-sm leading-6 text-gray-600 text-center">
                 We aim to respond to all enquiries within 24 hours.
               </p>
             </div>
-          </form>
+            </form>
+          </div>
         </motion.div>
 
         <motion.div

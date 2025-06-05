@@ -6,43 +6,61 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver'
 import TypewriterText from '../components/TypewriterText'
+import { 
+  EyeIcon, 
+  HeartIcon, 
+  HomeIcon, 
+  DocumentMagnifyingGlassIcon, 
+  ShieldExclamationIcon, 
+  UserIcon,
+  LightBulbIcon,
+  ShieldCheckIcon,
+  UserGroupIcon,
+  ClipboardDocumentCheckIcon,
+  BuildingOfficeIcon,
+  CheckBadgeIcon,
+  ChatBubbleLeftRightIcon,
+  DocumentTextIcon,
+  MagnifyingGlassIcon,
+  ChartBarIcon
+} from '@heroicons/react/24/outline'
 
 const services = [
   {
     name: 'Surveillance & Monitoring',
     description: 'Professional observation and evidence gathering with complete discretion.',
     href: '/services#surveillance',
-    icon: '/images/services/surveillance.png',
+    icon: EyeIcon,
   },
   {
     name: 'Cheating Partner Investigations',
     description: 'When you need answers, we\'re here to help with sensitivity and professionalism.',
     href: '/services#cheating-partner',
-    icon: '/images/services/cheating-partner.png',
+    icon: HeartIcon,
   },
   {
     name: 'School Zoning Checks',
     description: 'Supporting fair enrolment through address verification investigations.',
     href: '/services#school-zoning',
-    icon: '/images/services/school-zoning.png',
+    icon: HomeIcon,
   },
   {
     name: 'Background Checks',
     description: 'Know who you\'re dealing with before it matters.',
     href: '/services#background-checks',
-    icon: '/images/services/background-checks.png',
+    icon: DocumentMagnifyingGlassIcon,
   },
   {
     name: 'Stalker & Harassment Investigations',
     description: 'Professional support to help you feel safe again.',
     href: '/services#stalker-harassment',
-    icon: '/images/services/stalker-investigations.png',
+    icon: ShieldExclamationIcon,
   },
   {
     name: 'Tracing Missing Persons',
     description: 'Reconnecting people and recovering truth with care and discretion.',
     href: '/services#missing-persons',
-    icon: '/images/services/missing-person.png',
+    icon: UserIcon,
   },
 ]
 
@@ -53,188 +71,471 @@ export default function Home() {
 
   return (
     <div className="relative isolate">
-      {/* Logo section */}
-      <div className="relative w-full bg-[#16191c]">
-        <div className="mx-auto max-w-7xl px-6 pt-10 pb-16 lg:px-8">
+      {/* Hero section */}
+      <div className="relative isolate min-h-screen bg-background">
+        {/* Background image with overlay */}
+        <div className="absolute inset-0">
+          <Image
+            src="/images/investigator-at-desk-maps.png"
+            alt="Professional investigation workspace"
+            fill
+            className="object-cover opacity-20"
+            priority
+          />
+          <div className="absolute inset-0 bg-background/90" />
+        </div>
+        
+        {/* Content */}
+        <div className="relative mx-auto max-w-7xl px-6 pt-32 pb-20 lg:px-8">
+          {/* Logo */}
           <motion.div
-            className="flex justify-center"
+            className="flex justify-center mb-16"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8 }}
           >
-            <div className="relative w-full max-w-[800px]">
+            <div className="relative w-full max-w-[600px]">
               <Image
                 src="/logo_extended.png"
                 alt="Insight Investigations"
-                width={800}
-                height={300}
+                width={600}
+                height={225}
                 className="w-full h-auto object-contain"
                 priority
               />
             </div>
           </motion.div>
-        </div>
-      </div>
 
-      {/* Hero section */}
-      <div className="hero-spotlight relative isolate -z-10 bg-[#16191c]">
-        <div className="overflow-hidden">
-          <div className="mx-auto max-w-7xl px-6 pb-32 pt-36 sm:pt-60 lg:px-8 lg:pt-32">
-            <div className="mx-auto max-w-2xl gap-x-14 lg:mx-0 lg:flex lg:max-w-none lg:items-center">
-              <motion.div 
-                ref={heroRef}
-                className="w-full max-w-xl lg:shrink-0 xl:max-w-2xl"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8 }}
+          {/* Hero content */}
+          <div className="mx-auto max-w-4xl text-center">
+            <motion.h1
+              ref={heroRef}
+              className="text-5xl font-bold tracking-tight text-foreground sm:text-7xl font-serif mb-8"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+            >
+              {heroInView ? (
+                <TypewriterText 
+                  text="Shining light on the truth" 
+                  speed={80}
+                  delay={500}
+                />
+              ) : (
+                "Shining light on the truth"
+              )}
+            </motion.h1>
+            
+            <motion.p
+              className="text-xl leading-8 text-secondary mb-12 max-w-3xl mx-auto"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+            >
+              Professional, discreet private investigation services across New Zealand. 
+              When you need answers, we provide clarity with complete confidentiality.
+            </motion.p>
+            
+            <motion.div
+              className="flex flex-col sm:flex-row gap-6 justify-center items-center"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.9 }}
+            >
+              <Link
+                href="/contact"
+                className="rounded-lg bg-accent/10 px-8 py-4 text-lg font-semibold text-accent shadow-lg hover:bg-accent/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent transition-all duration-200 transform hover:scale-105"
               >
-                <h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl font-serif">
-                  {heroInView ? (
-                    <TypewriterText 
-                      text="Shining light on the truth" 
-                      speed={80}
-                      delay={500}
-                    />
-                  ) : (
-                    "Shining light on the truth"
-                  )}
-                </h1>
-                <p className="relative mt-6 text-lg leading-8 text-gray-300 sm:max-w-md lg:max-w-none">
-                  Based in Christchurch and offering services nationwide, Insight Investigations provides professional, discreet private investigation services tailored to both individuals and businesses.
-                </p>
-                <div className="mt-10 flex items-center gap-x-6">
-                  <Link
-                    href="/contact"
-                    className="button-primary"
-                  >
-                    Get in touch
-                  </Link>
-                  <Link href="/services" className="text-sm font-semibold leading-6 text-gray-300 hover:text-white transition-colors duration-200">
-                    Our services <span aria-hidden="true" className="ml-2">→</span>
-                  </Link>
-                </div>
-              </motion.div>
-            </div>
+                Start Your Investigation
+              </Link>
+              <Link 
+                href="/services" 
+                className="text-lg font-semibold leading-6 text-secondary hover:text-foreground transition-colors duration-200 flex items-center"
+              >
+                View Our Services 
+                <span aria-hidden="true" className="ml-2">→</span>
+              </Link>
+            </motion.div>
           </div>
+
+          {/* Trust indicators */}
+          <motion.div
+            className="mx-auto max-w-4xl mt-20 grid grid-cols-1 sm:grid-cols-3 gap-8 text-center"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 1.2 }}
+          >
+            <div className="flex flex-col items-center">
+              <div className="text-3xl font-bold text-foreground mb-2">Licensed</div>
+              <div className="text-secondary">New Zealand Private Investigator</div>
+            </div>
+            <div className="flex flex-col items-center">
+              <div className="text-3xl font-bold text-foreground mb-2">Nationwide</div>
+              <div className="text-secondary">Services Across New Zealand</div>
+            </div>
+            <div className="flex flex-col items-center">
+              <div className="text-3xl font-bold text-foreground mb-2">Confidential</div>
+              <div className="text-secondary">Complete Discretion Guaranteed</div>
+            </div>
+          </motion.div>
         </div>
       </div>
 
       {/* Services section */}
-      <div className="relative w-full bg-[#16191c] py-24">
+      <div className="relative w-full pt-12 pb-24">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <motion.div 
             ref={servicesRef}
-            className="mx-auto max-w-2xl lg:text-center"
+            className="mx-auto max-w-3xl text-center"
             initial={{ opacity: 0, y: 30 }}
             animate={servicesInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-base font-semibold leading-7 text-gray-300">Our Services</h2>
-            <p className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl font-serif">
+            <h2 className="text-base font-semibold leading-7 text-secondary uppercase tracking-wide">Our Services</h2>
+            <p className="mt-2 text-4xl font-bold tracking-tight text-foreground sm:text-5xl font-serif">
               Professional Investigation Services
             </p>
-            <p className="mt-6 text-lg leading-8 text-gray-300">
+            <p className="mt-6 text-xl leading-8 text-secondary">
               Whether you need clarity in personal matters, support for schools or employers, or evidence for legal purposes, we're here to help.
             </p>
           </motion.div>
-          <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
-            <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3">
+          
+          <div className="mx-auto mt-20 max-w-6xl">
+            <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
               {services.map((service, index) => (
                 <motion.div 
                   key={service.name}
-                  className="card group relative flex flex-col overflow-hidden"
+                  className="group relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-100"
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ 
                     duration: 0.6, 
-                    delay: index * 0.15,
+                    delay: index * 0.1,
                     ease: "easeOut"
                   }}
-                  onClick={() => window.location.href = service.href}
+                  whileHover={{ y: -5 }}
                 >
-                  <dt className="flex items-center gap-x-3 text-base font-semibold leading-7 text-black">
-                    <div className="service-icon-container flex-shrink-0 p-2 rounded-lg bg-gray-100 group-hover:bg-gray-200 transition-all duration-200">
-                      <Image
-                        src={service.icon}
-                        alt={service.name}
-                        width={64}
-                        height={64}
-                        className="h-16 w-16 rounded-lg"
-                      />
+                  <Link href={service.href} className="block p-8">
+                    <div className="flex items-start space-x-6">
+                      <div className="flex-shrink-0">
+                        <div className="w-16 h-16 bg-gray-100 rounded-xl flex items-center justify-center group-hover:bg-gray-200 transition-colors duration-200">
+                          <service.icon
+                            className="w-8 h-8 text-gray-600"
+                            aria-hidden="true"
+                          />
+                        </div>
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <h3 className="text-xl font-semibold text-gray-900 group-hover:text-gray-700 transition-colors duration-200 font-serif">
+                          {service.name}
+                        </h3>
+                        <p className="mt-3 text-base text-gray-600 leading-relaxed">
+                          {service.description}
+                        </p>
+                        <div className="mt-4 flex items-center text-sm font-semibold text-gray-900 group-hover:text-gray-700">
+                          Learn more 
+                          <span aria-hidden="true" className="ml-2 group-hover:translate-x-1 transition-transform duration-200">→</span>
+                        </div>
+                      </div>
                     </div>
-                    {service.name}
-                  </dt>
-                  <dd className="mt-4 flex flex-auto flex-col text-base leading-7">
-                    <p className="flex-auto text-gray-900">{service.description}</p>
-                    <p className="mt-6">
-                      <Link
-                        href={service.href}
-                        className="inline-flex items-center text-sm font-semibold text-gray-900 hover:text-black transition-colors duration-200"
-                      >
-                        Learn more <span aria-hidden="true" className="ml-2">→</span>
-                      </Link>
-                    </p>
-                  </dd>
+                  </Link>
                 </motion.div>
               ))}
-            </dl>
+            </div>
           </div>
+
+          {/* Call to action */}
+          <motion.div
+            className="mx-auto mt-16 max-w-2xl text-center"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+          >
+            <p className="text-lg text-secondary mb-8">
+              Don't see what you're looking for? We handle a wide range of investigation needs.
+            </p>
+            <Link
+              href="/contact"
+              className="inline-flex items-center rounded-lg bg-accent/10 px-6 py-3 text-base font-semibold text-accent shadow-lg hover:bg-accent/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent transition-all duration-200"
+            >
+              Discuss Your Case
+              <span aria-hidden="true" className="ml-2">→</span>
+            </Link>
+          </motion.div>
         </div>
       </div>
 
-      {/* What sets us apart section */}
-      <div ref={aboutRef} className="relative isolate mt-32 px-6 py-32 sm:mt-56 sm:py-40 lg:px-8">
-        <div className="absolute inset-x-0 top-1/2 -z-10 -translate-y-1/2 transform-gpu overflow-hidden opacity-30 blur-3xl">
-          <div
-            className="ml-[max(50%,38rem)] aspect-[1313/771] w-[82.0625rem] bg-gradient-to-tr from-accent to-primary"
-            style={{
-              clipPath:
-                'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)',
-            }}
-          />
-        </div>
-        <motion.div 
-          className="mx-auto max-w-2xl text-center"
-          initial={{ opacity: 0, y: 30 }}
-          animate={aboutInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-          transition={{ duration: 0.8 }}
-        >
-          <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl font-serif">
-            What Sets Us Apart
-          </h2>
-          <div className="mt-10 flex flex-col gap-4 text-lg leading-8 text-secondary">
-            {[
-              "A modern, professional approach — non-traditional background.",
-              "Total discretion and confidentiality",
-              "Option to speak with a woman, especially for sensitive matters",
-              "Clear, court-ready documentation if required",
-              "Serving private clients, schools, employers, and legal firms"
-            ].map((text, index) => (
-              <motion.p
-                key={index}
-                initial={{ opacity: 0, x: -20 }}
-                animate={aboutInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
-                transition={{ duration: 0.5, delay: aboutInView ? index * 0.1 : 0 }}
-              >
-                {text}
-              </motion.p>
-            ))}
-          </div>
+      {/* Why Choose Us section */}
+      <div ref={aboutRef} className="relative bg-gray-50 py-24">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <motion.div 
-            className="mt-10 flex items-center justify-center gap-x-6"
+            className="mx-auto max-w-3xl text-center"
+            initial={{ opacity: 0, y: 30 }}
+            animate={aboutInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+            transition={{ duration: 0.8 }}
+          >
+            <h2 className="text-base font-semibold leading-7 text-gray-600 uppercase tracking-wide">Why Choose Us</h2>
+            <p className="mt-2 text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl font-serif">
+              What Sets Us Apart
+            </p>
+            <p className="mt-6 text-xl leading-8 text-gray-600">
+              Professional expertise combined with a modern, client-focused approach to private investigation.
+            </p>
+          </motion.div>
+
+          {/* Professional workspace image */}
+          <motion.div
+            className="mx-auto mt-16 mb-16 max-w-4xl"
             initial={{ opacity: 0, y: 20 }}
             animate={aboutInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{ duration: 0.6, delay: 0.5 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
           >
-            <Link
-              href="/contact"
-              className="rounded-md bg-[#16191c] px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-gray-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900 transition-colors duration-200"
-            >
-              Get in touch
-            </Link>
+            <div className="relative h-96 overflow-hidden rounded-xl shadow-2xl">
+              <Image
+                src="/images/investigator-at-desk.png"
+                alt="Professional private investigator at work"
+                fill
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+            </div>
           </motion.div>
-        </motion.div>
+
+          <div className="mx-auto mt-20 max-w-6xl">
+            <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+              {[
+                {
+                  name: 'Modern Approach',
+                  description: 'Fresh perspective with innovative solutions, free from traditional law enforcement constraints.',
+                  icon: LightBulbIcon
+                },
+                {
+                  name: 'Total Discretion',
+                  description: 'Complete confidentiality guaranteed throughout every investigation, protecting your privacy.',
+                  icon: ShieldCheckIcon
+                },
+                {
+                  name: 'Female Investigator Available',
+                  description: 'Option to speak with a woman for sensitive matters, ensuring your comfort and trust.',
+                  icon: UserGroupIcon
+                },
+                {
+                  name: 'Court-Ready Evidence',
+                  description: 'Professional documentation meeting legal standards for court proceedings when required.',
+                  icon: ClipboardDocumentCheckIcon
+                },
+                {
+                  name: 'Diverse Clientele',
+                  description: 'Serving individuals, schools, employers, and legal firms with tailored solutions.',
+                  icon: BuildingOfficeIcon
+                },
+                {
+                  name: 'Licensed Professional',
+                  description: 'Licensed Private Investigator with proven expertise in criminal and insurance investigations.',
+                  icon: CheckBadgeIcon
+                }
+              ].map((feature, index) => (
+                <motion.div
+                  key={feature.name}
+                  className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300"
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={aboutInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  whileHover={{ y: -5 }}
+                >
+                  <div className="mb-4">
+                    <feature.icon className="w-10 h-10 text-gray-500" aria-hidden="true" />
+                  </div>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-3 font-serif">
+                    {feature.name}
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    {feature.description}
+                  </p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+
+          {/* Stats section */}
+          <motion.div
+            className="mx-auto mt-20 max-w-4xl"
+            initial={{ opacity: 0, y: 30 }}
+            animate={aboutInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+          >
+            <div className="bg-gray-900 rounded-2xl p-12 text-center">
+              <h3 className="text-2xl font-bold text-white mb-8 font-serif">
+                Trusted Across New Zealand
+              </h3>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
+                <div>
+                  <div className="text-3xl font-bold text-white mb-2">100%</div>
+                  <div className="text-gray-300">Confidential</div>
+                </div>
+                <div>
+                  <div className="text-3xl font-bold text-white mb-2">Licensed</div>
+                  <div className="text-gray-300">Professional</div>
+                </div>
+                <div>
+                  <div className="text-3xl font-bold text-white mb-2">Nationwide</div>
+                  <div className="text-gray-300">Coverage</div>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+
+          <motion.div 
+            className="mx-auto mt-16 max-w-2xl text-center"
+            initial={{ opacity: 0, y: 20 }}
+            animate={aboutInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+            transition={{ duration: 0.6, delay: 0.6 }}
+          >
+            <h3 className="text-2xl font-bold text-gray-900 mb-6 font-serif">
+              Ready to Get Started?
+            </h3>
+            <p className="text-lg text-gray-600 mb-8">
+              Every investigation begins with a free, confidential consultation to understand your needs.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link
+                href="/contact"
+                className="inline-flex items-center rounded-lg bg-gray-900 px-6 py-3 text-base font-semibold text-white shadow-lg hover:bg-gray-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900 transition-all duration-200"
+              >
+                Get Your Free Consultation
+                <span aria-hidden="true" className="ml-2">→</span>
+              </Link>
+              <Link
+                href="/about"
+                className="inline-flex items-center rounded-lg border border-gray-300 bg-white px-6 py-3 text-base font-semibold text-gray-900 shadow-sm hover:bg-gray-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900 transition-all duration-200"
+              >
+                Learn More About Us
+              </Link>
+            </div>
+          </motion.div>
+        </div>
+      </div>
+
+      {/* How We Work section */}
+      <div className="relative py-24">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <motion.div 
+            className="mx-auto max-w-3xl text-center"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            <h2 className="text-base font-semibold leading-7 text-secondary uppercase tracking-wide">Our Process</h2>
+            <p className="mt-2 text-4xl font-bold tracking-tight text-foreground sm:text-5xl font-serif">
+              How We Work
+            </p>
+            <p className="mt-6 text-xl leading-8 text-secondary">
+              A clear, professional process designed to get you the answers you need with complete discretion.
+            </p>
+          </motion.div>
+
+          <div className="mx-auto mt-20 max-w-6xl">
+            {/* Timeline container */}
+            <div className="relative">
+              {/* Horizontal timeline line */}
+              <div className="hidden lg:block absolute left-0 right-0 h-0.5 bg-gray-200 z-0" style={{ top: '32px' }} />
+              
+              {/* Timeline steps positioned along the line */}
+              <div className="flex justify-between items-start relative">
+                {[
+                  {
+                    step: '01',
+                    title: 'Free Consultation',
+                    description: 'We discuss your situation in complete confidence, understand your needs, and explain how we can help.',
+                    icon: ChatBubbleLeftRightIcon,
+                    position: 'left'
+                  },
+                  {
+                    step: '02',
+                    title: 'Strategy & Quote',
+                    description: 'We develop a tailored investigation plan and provide transparent pricing with no hidden costs.',
+                    icon: DocumentTextIcon,
+                    position: 'left-center'
+                  },
+                  {
+                    step: '03',
+                    title: 'Investigation',
+                    description: 'Our licensed investigator conducts professional, discreet work using proven methods and technology.',
+                    icon: MagnifyingGlassIcon,
+                    position: 'right-center'
+                  },
+                  {
+                    step: '04',
+                    title: 'Results & Report',
+                    description: 'You receive clear documentation of findings, with court-ready evidence if required.',
+                    icon: ChartBarIcon,
+                    position: 'right'
+                  }
+                ].map((process, index) => (
+                  <motion.div
+                    key={process.step}
+                    className="flex-1 text-center relative z-10 max-w-xs"
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, delay: index * 0.2 }}
+                  >
+                    {/* Step circle positioned on the line */}
+                    <div className="mx-auto w-16 h-16 bg-gray-900 rounded-full flex items-center justify-center text-white text-xl font-bold mb-6 relative z-20 border-4 border-white shadow-lg">
+                      {process.step}
+                    </div>
+                    <div className="mb-4">
+                      <process.icon className="w-8 h-8 text-gray-500 mx-auto" aria-hidden="true" />
+                    </div>
+                    <h3 className="text-xl font-semibold text-foreground mb-3 font-serif">
+                      {process.title}
+                    </h3>
+                    <p className="text-secondary leading-relaxed">
+                      {process.description}
+                    </p>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Final CTA */}
+          <motion.div
+            className="mx-auto mt-20 max-w-3xl text-center bg-gray-50 rounded-2xl p-12"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+          >
+            <h3 className="text-3xl font-bold text-gray-900 mb-6 font-serif">
+              Ready to Uncover the Truth?
+            </h3>
+            <p className="text-lg text-gray-600 mb-8">
+              Every case is unique. Let's discuss how we can help you get the clarity and answers you need.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link
+                href="/contact"
+                className="inline-flex items-center rounded-lg bg-gray-900 px-8 py-4 text-lg font-semibold text-white shadow-lg hover:bg-gray-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900 transition-all duration-200 transform hover:scale-105"
+              >
+                Book Your Free Consultation
+                <span aria-hidden="true" className="ml-2">→</span>
+              </Link>
+              <Link
+                href="/faq"
+                className="inline-flex items-center rounded-lg border border-gray-300 bg-white px-8 py-4 text-lg font-semibold text-gray-900 shadow-sm hover:bg-gray-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900 transition-all duration-200"
+              >
+                Common Questions
+              </Link>
+            </div>
+            <p className="mt-6 text-sm text-gray-500">
+              All consultations are completely confidential • No obligation • Licensed professional
+            </p>
+          </motion.div>
+        </div>
       </div>
     </div>
   )
