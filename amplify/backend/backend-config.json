@@ -21,5 +21,23 @@
       "providerPlugin": "awscloudformation",
       "service": "Lambda"
     }
+  },
+  "parameters": {
+    "AMPLIFY_function_contactForm_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "contactForm"
+        }
+      ]
+    },
+    "AMPLIFY_function_contactForm_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "contactForm"
+        }
+      ]
+    }
   }
 }

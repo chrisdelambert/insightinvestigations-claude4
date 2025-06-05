@@ -13,7 +13,13 @@
     },
     "categories": {
       "function": {
-        "contactForm": {}
+        "contactForm": {
+          "deploymentBucketName": "amplify-insightinvestigation-dev-fc306-deployment",
+          "s3Key": "amplify-builds/contactForm-5a4b2f344c4a6c545532-build.zip"
+        }
+      },
+      "api": {
+        "insightinvestigationsapi": {}
       }
     }
   }
