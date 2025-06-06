@@ -205,7 +205,7 @@ export default function Home() {
               {services.map((service, index) => (
                 <motion.div 
                   key={service.name}
-                  className="group relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-100"
+                  className="group relative bg-gray-800 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-700"
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
                   viewport={{ once: true }}
@@ -217,21 +217,21 @@ export default function Home() {
                   <Link href={service.href} className="block p-8">
                     <div className="flex items-start space-x-6">
                       <div className="flex-shrink-0">
-                        <div className="w-16 h-16 bg-gray-100 rounded-xl flex items-center justify-center group-hover:bg-gray-200 transition-colors duration-200">
+                        <div className="w-16 h-16 bg-gray-700 rounded-xl flex items-center justify-center group-hover:bg-gray-600 transition-colors duration-200">
                           <service.icon
-                            className="w-8 h-8 text-gray-600"
+                            className="w-8 h-8 text-gray-300"
                             aria-hidden="true"
                           />
                         </div>
                       </div>
                       <div className="flex-1 min-w-0">
-                        <h3 className="text-xl font-semibold text-gray-900 group-hover:text-gray-700 transition-colors duration-200 font-serif">
+                        <h3 className="text-xl font-semibold text-white group-hover:text-gray-200 transition-colors duration-200 font-serif">
                           {service.name}
                         </h3>
-                        <p className="mt-3 text-base text-gray-600 leading-relaxed">
+                        <p className="mt-3 text-base text-gray-300 leading-relaxed">
                           {service.description}
                         </p>
-                        <div className="mt-4 flex items-center text-sm font-semibold text-gray-900 group-hover:text-gray-700">
+                        <div className="mt-4 flex items-center text-sm font-semibold text-white group-hover:text-gray-200">
                           Learn more 
                           <span aria-hidden="true" className="ml-2 group-hover:translate-x-1 transition-transform duration-200">→</span>
                         </div>
@@ -256,7 +256,7 @@ export default function Home() {
             </p>
             <Link
               href="/contact"
-              className="inline-flex items-center rounded-lg bg-accent/10 px-6 py-3 text-base font-semibold text-accent shadow-lg hover:bg-accent/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent transition-all duration-200"
+              className="inline-flex items-center rounded-lg bg-white px-6 py-3 text-base font-semibold text-gray-900 shadow-lg hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white transition-all duration-200"
             >
               Discuss Your Case
               <span aria-hidden="true" className="ml-2">→</span>
@@ -266,7 +266,7 @@ export default function Home() {
       </div>
 
       {/* Why Choose Us section */}
-      <div ref={aboutRef} className="relative bg-gray-50 py-24">
+      <div ref={aboutRef} className="relative bg-gray-900 py-24">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <motion.div 
             className="mx-auto max-w-3xl text-center"
@@ -274,11 +274,11 @@ export default function Home() {
             animate={aboutInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-base font-semibold leading-7 text-gray-600 uppercase tracking-wide">Why Choose Us</h2>
-            <p className="mt-2 text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl font-serif">
+            <h2 className="text-base font-semibold leading-7 text-gray-400 uppercase tracking-wide">Why Choose Us</h2>
+            <p className="mt-2 text-4xl font-bold tracking-tight text-white sm:text-5xl font-serif">
               What Sets Us Apart
             </p>
-            <p className="mt-6 text-xl leading-8 text-gray-600">
+            <p className="mt-6 text-xl leading-8 text-gray-300">
               Professional expertise combined with a modern, client-focused approach to private investigation.
             </p>
           </motion.div>
@@ -337,19 +337,19 @@ export default function Home() {
               ].map((feature, index) => (
                 <motion.div
                   key={feature.name}
-                  className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300"
+                  className="bg-gray-800 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-700"
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.8, delay: index * 0.15 }}
                 >
                   <div className="mb-4">
-                    <feature.icon className="w-10 h-10 text-gray-500" aria-hidden="true" />
+                    <feature.icon className="w-10 h-10 text-gray-400" aria-hidden="true" />
                   </div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-3 font-serif">
+                  <h3 className="text-xl font-semibold text-white mb-3 font-serif">
                     {feature.name}
                   </h3>
-                  <p className="text-gray-600 leading-relaxed">
+                  <p className="text-gray-300 leading-relaxed">
                     {feature.description}
                   </p>
                 </motion.div>
@@ -364,7 +364,7 @@ export default function Home() {
             animate={aboutInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            <div className="bg-gray-900 rounded-2xl p-12 text-center">
+            <div className="bg-gray-800 border border-gray-700 rounded-2xl p-12 text-center">
               <h3 className="text-2xl font-bold text-white mb-8 font-serif">
                 Trusted Across New Zealand
               </h3>
@@ -391,23 +391,23 @@ export default function Home() {
             animate={aboutInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.6, delay: 0.6 }}
           >
-            <h3 className="text-2xl font-bold text-gray-900 mb-6 font-serif">
+            <h3 className="text-2xl font-bold text-white mb-6 font-serif">
               Ready to Get Started?
             </h3>
-            <p className="text-lg text-gray-600 mb-8">
+            <p className="text-lg text-gray-300 mb-8">
               Every investigation begins with a free, confidential consultation to understand your needs.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="/contact"
-                className="inline-flex items-center rounded-lg bg-gray-900 px-6 py-3 text-base font-semibold text-white shadow-lg hover:bg-gray-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900 transition-all duration-200"
+                className="inline-flex items-center rounded-lg bg-white px-6 py-3 text-base font-semibold text-gray-900 shadow-lg hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white transition-all duration-200"
               >
                 Get Your Free Consultation
                 <span aria-hidden="true" className="ml-2">→</span>
               </Link>
               <Link
                 href="/about"
-                className="inline-flex items-center rounded-lg border border-gray-300 bg-white px-6 py-3 text-base font-semibold text-gray-900 shadow-sm hover:bg-gray-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900 transition-all duration-200"
+                className="inline-flex items-center rounded-lg border border-gray-600 bg-gray-800 px-6 py-3 text-base font-semibold text-white shadow-sm hover:bg-gray-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-600 transition-all duration-200"
               >
                 Learn More About Us
               </Link>
@@ -521,34 +521,34 @@ export default function Home() {
 
           {/* Final CTA */}
           <motion.div
-            className="mx-auto mt-20 max-w-3xl text-center bg-gray-50 rounded-2xl p-12"
+            className="mx-auto mt-20 max-w-3xl text-center bg-gray-800 border border-gray-700 rounded-2xl p-12"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            <h3 className="text-3xl font-bold text-gray-900 mb-6 font-serif">
+            <h3 className="text-3xl font-bold text-white mb-6 font-serif">
               Ready to Uncover the Truth?
             </h3>
-            <p className="text-lg text-gray-600 mb-8">
+            <p className="text-lg text-gray-300 mb-8">
               Every case is unique. Let's discuss how we can help you get the clarity and answers you need.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="/contact"
-                className="inline-flex items-center rounded-lg bg-gray-900 px-8 py-4 text-lg font-semibold text-white shadow-lg hover:bg-gray-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900 transition-all duration-200 transform hover:scale-105"
+                className="inline-flex items-center rounded-lg bg-white px-8 py-4 text-lg font-semibold text-gray-900 shadow-lg hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white transition-all duration-200 transform hover:scale-105"
               >
                 Book Your Free Consultation
                 <span aria-hidden="true" className="ml-2">→</span>
               </Link>
               <Link
                 href="/faq"
-                className="inline-flex items-center rounded-lg border border-gray-300 bg-white px-8 py-4 text-lg font-semibold text-gray-900 shadow-sm hover:bg-gray-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900 transition-all duration-200"
+                className="inline-flex items-center rounded-lg border border-gray-600 bg-gray-800 px-8 py-4 text-lg font-semibold text-white shadow-sm hover:bg-gray-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-600 transition-all duration-200"
               >
                 Common Questions
               </Link>
             </div>
-            <p className="mt-6 text-sm text-gray-500">
+            <p className="mt-6 text-sm text-gray-400">
               All consultations are completely confidential • No obligation • Licensed professional
             </p>
           </motion.div>
