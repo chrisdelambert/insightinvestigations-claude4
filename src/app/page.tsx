@@ -86,20 +86,20 @@ export default function Home() {
         </div>
         
         {/* Content */}
-        <div className="relative mx-auto max-w-7xl px-6 pt-32 pb-20 lg:px-8">
+        <div className="relative mx-auto max-w-7xl px-6 pt-24 pb-12 lg:px-8">
           {/* Logo */}
           <motion.div
-            className="flex justify-center mb-16"
+            className="flex justify-center mb-10"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8 }}
           >
-            <div className="relative w-full max-w-[600px]">
+            <div className="relative w-full max-w-[900px]">
               <Image
-                src="/logo_extended.png"
+                src="/logo.jpg"
                 alt="Insight Investigations"
-                width={600}
-                height={225}
+                width={900}
+                height={338}
                 className="w-full h-auto object-contain"
                 priority
               />
@@ -206,15 +206,13 @@ export default function Home() {
                 <motion.div 
                   key={service.name}
                   className="group relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-100"
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
                   viewport={{ once: true }}
                   transition={{ 
-                    duration: 0.6, 
-                    delay: index * 0.1,
-                    ease: "easeOut"
+                    duration: 0.8, 
+                    delay: index * 0.2
                   }}
-                  whileHover={{ y: -5 }}
                 >
                   <Link href={service.href} className="block p-8">
                     <div className="flex items-start space-x-6">
@@ -340,10 +338,10 @@ export default function Home() {
                 <motion.div
                   key={feature.name}
                   className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300"
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={aboutInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  whileHover={{ y: -5 }}
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8, delay: index * 0.15 }}
                 >
                   <div className="mb-4">
                     <feature.icon className="w-10 h-10 text-gray-500" aria-hidden="true" />
@@ -437,6 +435,25 @@ export default function Home() {
             </p>
           </motion.div>
 
+          {/* Professional investigation image */}
+          <motion.div
+            className="mx-auto mt-16 mb-16 max-w-4xl"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
+            <div className="relative h-96 overflow-hidden rounded-xl shadow-2xl">
+              <Image
+                src="/images/Background Checks.png"
+                alt="Professional investigation workspace"
+                fill
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+            </div>
+          </motion.div>
+
           <div className="mx-auto mt-20 max-w-6xl">
             {/* Timeline container */}
             <div className="relative">
@@ -478,10 +495,10 @@ export default function Home() {
                   <motion.div
                     key={process.step}
                     className="flex-1 text-center relative z-10 max-w-xs"
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.6, delay: index * 0.2 }}
+                    transition={{ duration: 0.8, delay: index * 0.3 }}
                   >
                     {/* Step circle positioned on the line */}
                     <div className="mx-auto w-16 h-16 bg-gray-900 rounded-full flex items-center justify-center text-white text-xl font-bold mb-6 relative z-20 border-4 border-white shadow-lg">
