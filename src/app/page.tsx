@@ -203,16 +203,10 @@ export default function Home() {
           <div className="mx-auto mt-20 max-w-6xl">
             <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
               {services.map((service, index) => (
-                <motion.div 
+                <div 
                   key={service.name}
-                  className="group relative bg-gray-800 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-700"
-                  initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ 
-                    duration: 0.8, 
-                    delay: index * 0.2
-                  }}
+                  className="group relative bg-gray-800 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-700 opacity-0 animate-fade-in"
+                  style={{ animationDelay: `${index * 200}ms` }}
                 >
                   <Link href={service.href} className="block p-8">
                     <div className="flex items-start space-x-6">
@@ -238,7 +232,7 @@ export default function Home() {
                       </div>
                     </div>
                   </Link>
-                </motion.div>
+                </div>
               ))}
             </div>
           </div>
@@ -335,13 +329,10 @@ export default function Home() {
                   icon: CheckBadgeIcon
                 }
               ].map((feature, index) => (
-                <motion.div
+                <div
                   key={feature.name}
-                  className="bg-gray-800 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-700"
-                  initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.8, delay: index * 0.15 }}
+                  className="bg-gray-800 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-700 opacity-0 animate-fade-in"
+                  style={{ animationDelay: `${index * 150}ms` }}
                 >
                   <div className="mb-4">
                     <feature.icon className="w-10 h-10 text-gray-400" aria-hidden="true" />
@@ -352,7 +343,7 @@ export default function Home() {
                   <p className="text-gray-300 leading-relaxed">
                     {feature.description}
                   </p>
-                </motion.div>
+                </div>
               ))}
             </div>
           </div>
@@ -492,13 +483,10 @@ export default function Home() {
                     position: 'right'
                   }
                 ].map((process, index) => (
-                  <motion.div
+                  <div
                     key={process.step}
-                    className="flex-1 text-center relative z-10 max-w-xs"
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.8, delay: index * 0.3 }}
+                    className="flex-1 text-center relative z-10 max-w-xs opacity-0 animate-fade-in"
+                    style={{ animationDelay: `${index * 300}ms` }}
                   >
                     {/* Step circle positioned on the line */}
                     <div className="mx-auto w-16 h-16 bg-gray-900 rounded-full flex items-center justify-center text-white text-xl font-bold mb-6 relative z-20 border-4 border-white shadow-lg">
@@ -513,7 +501,7 @@ export default function Home() {
                     <p className="text-secondary leading-relaxed">
                       {process.description}
                     </p>
-                  </motion.div>
+                  </div>
                 ))}
               </div>
             </div>

@@ -43,7 +43,7 @@ export default function Header() {
             <Bars3Icon className="h-6 w-6" aria-hidden="true" />
           </button>
         </div>
-        <div className="hidden lg:flex lg:gap-x-8">
+        <div className="hidden lg:flex lg:gap-x-8 relative">
           {navigation.map((item) => {
             const isActive = pathname === item.href
             return (
@@ -60,8 +60,9 @@ export default function Header() {
                 {isActive && (
                   <motion.div
                     className="absolute -bottom-1 left-0 right-0 h-0.5 bg-white"
-                    layoutId="activeTab"
-                    transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                    initial={{ scaleX: 0 }}
+                    animate={{ scaleX: 1 }}
+                    transition={{ duration: 0.3, ease: "easeInOut" }}
                   />
                 )}
               </Link>
