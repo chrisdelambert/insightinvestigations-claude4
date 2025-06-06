@@ -448,11 +448,11 @@ export default function Home() {
           <div className="mx-auto mt-20 max-w-6xl">
             {/* Timeline container */}
             <div className="relative">
-              {/* Horizontal timeline line */}
+              {/* Horizontal timeline line - desktop only */}
               <div className="hidden lg:block absolute left-0 right-0 h-0.5 bg-gray-200 z-0" style={{ top: '32px' }} />
               
-              {/* Timeline steps positioned along the line */}
-              <div className="flex justify-between items-start relative">
+              {/* Timeline steps - responsive layout */}
+              <div className="flex flex-col lg:flex-row lg:justify-between items-center lg:items-start relative space-y-12 lg:space-y-0">
                 {[
                   {
                     step: '01',
@@ -485,10 +485,15 @@ export default function Home() {
                 ].map((process, index) => (
                   <div
                     key={process.step}
-                    className="flex-1 text-center relative z-10 max-w-xs opacity-0 animate-fade-in"
+                    className="w-full lg:flex-1 text-center relative z-10 max-w-sm lg:max-w-xs opacity-0 animate-fade-in"
                     style={{ animationDelay: `${index * 300}ms` }}
                   >
-                    {/* Step circle positioned on the line */}
+                    {/* Mobile: Add connecting line between steps */}
+                    {index > 0 && (
+                      <div className="lg:hidden absolute -top-6 left-1/2 transform -translate-x-0.5 w-0.5 h-12 bg-gray-200 z-0" />
+                    )}
+                    
+                    {/* Step circle */}
                     <div className="mx-auto w-16 h-16 bg-gray-900 rounded-full flex items-center justify-center text-white text-xl font-bold mb-6 relative z-20 border-4 border-white shadow-lg">
                       {process.step}
                     </div>
@@ -498,7 +503,7 @@ export default function Home() {
                     <h3 className="text-xl font-semibold text-foreground mb-3 font-serif">
                       {process.title}
                     </h3>
-                    <p className="text-secondary leading-relaxed">
+                    <p className="text-secondary leading-relaxed px-4 lg:px-0">
                       {process.description}
                     </p>
                   </div>
