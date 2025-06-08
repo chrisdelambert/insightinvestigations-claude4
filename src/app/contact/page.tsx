@@ -23,7 +23,7 @@ export default function Contact() {
     setErrorMessage('')
 
     try {
-      const response = await fetch('https://rxnrcvne9l.execute-api.ap-southeast-2.amazonaws.com/dev/contact', {
+      const response = await fetch('https://nxcwo4svd6.execute-api.ap-southeast-2.amazonaws.com/main/contact', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
