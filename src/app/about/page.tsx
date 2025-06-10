@@ -4,10 +4,12 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import Image from 'next/image'
+import { PersonSchema } from '../../components/structured-data/PersonSchema'
 
 export default function About() {
   return (
     <div className="relative isolate">
+      <PersonSchema />
       <div className="mx-auto max-w-7xl px-6 pb-24 pt-36 sm:pt-60 lg:px-8 lg:pt-32">
         <div className="mx-auto max-w-2xl lg:mx-0">
           <motion.h1

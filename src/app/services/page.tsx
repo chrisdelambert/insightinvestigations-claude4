@@ -4,6 +4,7 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import Image from 'next/image'
+import { ServiceSchema } from '../../components/structured-data/ServiceSchema'
 
 const services = [
   {
@@ -143,6 +144,9 @@ const services = [
 export default function Services() {
   return (
     <div className="relative isolate">
+      {services.map((service) => (
+        <ServiceSchema key={service.id} service={service} />
+      ))}
       {/* Hero section */}
       <div className="relative isolate -z-10">
         <div className="overflow-hidden">

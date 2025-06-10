@@ -6,6 +6,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver'
 import TypewriterText from '../components/TypewriterText'
+import { LocalBusinessSchema } from '../components/structured-data/LocalBusinessSchema'
 import { 
   EyeIcon, 
   HeartIcon, 
@@ -71,6 +72,7 @@ export default function Home() {
 
   return (
     <div className="relative isolate">
+      <LocalBusinessSchema />
       {/* Hero section */}
       <div className="relative isolate min-h-screen bg-background">
         {/* Background image with overlay */}

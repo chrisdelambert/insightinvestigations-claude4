@@ -3,13 +3,12 @@
 import React, { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import Link from 'next/link'
+import { FAQSchema } from '../../components/structured-data/FAQSchema'
 import { 
   ShieldCheckIcon, 
   CurrencyDollarIcon, 
   ScaleIcon, 
-  MapPinIcon,
-  UserGroupIcon,
-  ClockIcon
+  MapPinIcon
 } from '@heroicons/react/24/outline'
 
 const faqCategories = [
@@ -81,9 +80,13 @@ const faqCategories = [
 
 export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(null)
+  
+  // Flatten all FAQs for schema
+  const allFAQs = faqCategories.flatMap(category => category.faqs)
 
   return (
     <div className="relative isolate">
+      <FAQSchema faqs={allFAQs} />
       <div className="mx-auto max-w-7xl px-6 pb-24 pt-36 sm:pt-60 lg:px-8 lg:pt-32">
         <div className="mx-auto max-w-2xl lg:mx-0">
           <motion.h1

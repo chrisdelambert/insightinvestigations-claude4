@@ -30,13 +30,15 @@ app.options('/contact', function(req, res) {
 // Contact form submission endpoint
 app.post('/contact', async function(req, res) {
   try {
-    const { name, email, phone, message } = req.body
+    const { name, email, phone, service, message, preferWoman, callbackPreferred } = req.body
+
+    console.log('Received contact form submission:', { name, email, phone, service, preferWoman, callbackPreferred })
 
     // Validate required fields
-    if (!name || !email || !message) {
+    if (!name || !email || !service || !message) {
       return res.status(400).json({
         success: false,
-        message: 'Name, email, and message are required fields'
+        error: 'Name, email, service, and message are required fields'
       })
     }
 
@@ -49,6 +51,12 @@ app.post('/contact', async function(req, res) {
       })
     }
 
+    // Prepare preferences text
+    const preferences = []
+    if (preferWoman) preferences.push('Prefer to speak with a woman')
+    if (callbackPreferred) preferences.push('Prefer a callback over email response')
+    const preferencesText = preferences.length > 0 ? `\n\nPreferences:\n${preferences.join('\n')}` : ''
+
     // Prepare email content
     const emailText = `
 New Contact Form Submission
@@ -56,9 +64,10 @@ New Contact Form Submission
 From: ${name}
 Email: ${email}
 Phone: ${phone || 'Not provided'}
+Service of Interest: ${service}
 
 Message:
-${message}
+${message}${preferencesText}
 
 ---
 Sent from Insight Investigations website contact form
@@ -105,6 +114,10 @@ Sent from Insight Investigations website contact form
                           <td style="padding: 8px 0; font-weight: 600; color: #374151;">Phone:</td>
                           <td style="padding: 8px 0; color: #1a1a1a;">${phone || 'Not provided'}</td>
                         </tr>
+                        <tr>
+                          <td style="padding: 8px 0; font-weight: 600; color: #374151;">Service:</td>
+                          <td style="padding: 8px 0; color: #1a1a1a;">${service}</td>
+                        </tr>
                       </table>
                     </div>
                     
@@ -113,6 +126,16 @@ Sent from Insight Investigations website contact form
                       <h3 style="margin: 0 0 15px 0; font-size: 18px; font-weight: 600; color: #1a1a1a;">Message:</h3>
                       <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #374151; white-space: pre-wrap;">${message}</p>
                     </div>
+                    
+                    ${preferences.length > 0 ? `
+                    <!-- Preferences -->
+                    <div style="background-color: #f8f9fa; border: 1px solid #e5e7eb; padding: 25px; margin: 25px 0; border-radius: 8px;">
+                      <h3 style="margin: 0 0 15px 0; font-size: 18px; font-weight: 600; color: #1a1a1a;">Preferences:</h3>
+                      <ul style="margin: 0; padding-left: 20px; font-size: 15px; line-height: 1.6; color: #374151;">
+                        ${preferences.map(p => `<li style="margin-bottom: 8px;">${p}</li>`).join('')}
+                      </ul>
+                    </div>
+                    ` : ''}
                   </td>
                 </tr>
                 
@@ -160,10 +183,10 @@ Sent from Insight Investigations website contact form
     const confirmationText = `
 Dear ${name},
 
-Thank you for contacting Insight Investigations. We have received your enquiry and will respond within 24 hours.
+Thank you for contacting Insight Investigations. We have received your enquiry regarding ${service} and will respond within 24 hours.
 
 Your message:
-${message}
+${message}${preferencesText}
 
 If you need immediate assistance, please call us directly.
 
@@ -202,13 +225,23 @@ This is an automated confirmation. Please do not reply to this email.
                     
                     <p style="margin: 0 0 20px 0; font-size: 16px; line-height: 1.6; color: #374151;">Dear ${name},</p>
                     
-                    <p style="margin: 0 0 25px 0; font-size: 16px; line-height: 1.6; color: #374151;">Thank you for contacting Insight Investigations. We have received your enquiry and will respond within 24 hours.</p>
+                    <p style="margin: 0 0 25px 0; font-size: 16px; line-height: 1.6; color: #374151;">Thank you for contacting Insight Investigations. We have received your enquiry regarding <strong>${service}</strong> and will respond within 24 hours.</p>
                     
                     <!-- Message Box -->
                     <div style="background-color: #f8f9fa; border-left: 4px solid #1a1a1a; padding: 20px; margin: 25px 0; border-radius: 4px;">
                       <h3 style="margin: 0 0 15px 0; font-size: 18px; font-weight: 600; color: #1a1a1a;">Your message:</h3>
                       <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #4b5563; white-space: pre-wrap;">${message}</p>
                     </div>
+                    
+                    ${preferences.length > 0 ? `
+                    <!-- Preferences Box -->
+                    <div style="background-color: #f0f9ff; border-left: 4px solid #1a1a1a; padding: 20px; margin: 25px 0; border-radius: 4px;">
+                      <h3 style="margin: 0 0 15px 0; font-size: 18px; font-weight: 600; color: #1a1a1a;">Your preferences:</h3>
+                      <ul style="margin: 0; padding-left: 20px; font-size: 15px; line-height: 1.6; color: #4b5563;">
+                        ${preferences.map(p => `<li style="margin-bottom: 8px;">${p}</li>`).join('')}
+                      </ul>
+                    </div>
+                    ` : ''}
                     
                     <p style="margin: 25px 0 0 0; font-size: 16px; line-height: 1.6; color: #374151;">If you need immediate assistance, please call us directly.</p>
                   </td>
