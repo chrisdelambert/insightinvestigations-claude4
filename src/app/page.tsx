@@ -57,9 +57,9 @@ const services = [
     icon: ShieldExclamationIcon,
   },
   {
-    name: 'Tracing Missing Persons',
+    name: 'Finding People',
     description: 'Reconnecting people and recovering truth with care and discretion.',
-    href: '/services#missing-persons',
+    href: '/services#finding-people',
     icon: UserIcon,
   },
 ]
@@ -132,7 +132,7 @@ export default function Home() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
             >
-              Professional, discreet private investigation services across New Zealand. 
+              Based in Christchurch, we provide professional and discreet private investigation services throughout New Zealand. 
               When you need answers, we provide clarity with complete confidentiality.
             </motion.p>
             

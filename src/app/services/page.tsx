@@ -117,8 +117,8 @@ const services = [
     ],
   },
   {
-    id: 'missing-persons',
-    name: 'Tracing Missing Persons',
+    id: 'finding-people',
+    name: 'Finding People',
     description: 'Reconnecting people. Recovering truth.',
     longDescription: 'Whether it\'s a long-lost family member, someone avoiding legal responsibility, or a person who has simply vanished — not knowing where they are can leave you feeling stuck and helpless.',
     image: '/images/Missing Person Image.png',
@@ -187,6 +187,7 @@ export default function Services() {
                 transition={{ duration: 0.8, delay: index * 0.1 }}
               >
               <div className="lg:sticky lg:top-24">
+                <h2 className="text-3xl font-bold tracking-tight text-foreground font-serif mb-6">{service.name}</h2>
                 <div className="relative mb-8 overflow-hidden rounded-xl">
                   <Image
                     src={service.image}
@@ -197,7 +198,6 @@ export default function Services() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
                 </div>
-                <h2 className="text-3xl font-bold tracking-tight text-foreground font-serif">{service.name}</h2>
                 <p className="mt-4 text-xl text-accent">{service.description}</p>
                 <p className="mt-6 text-base leading-7 text-secondary">{service.longDescription}</p>
                 <div className="mt-10">

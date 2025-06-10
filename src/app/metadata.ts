@@ -2,5 +2,5 @@ import { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Insight Investigations | Professional Private Investigation Services',
-  description: 'Professional, discreet private investigation services in Christchurch and nationwide. Surveillance, background checks, missing persons, and more.',
+  description: 'Based in Christchurch, we provide professional and discreet private investigation services throughout New Zealand. Surveillance, background checks, finding people, and more.',
 } 

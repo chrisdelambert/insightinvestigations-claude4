@@ -15,7 +15,7 @@ const navigation = {
     { name: 'School Zoning Checks', href: '/services#school-zoning' },
     { name: 'Background Checks', href: '/services#background-checks' },
     { name: 'Stalker & Harassment Investigations', href: '/services#stalker-harassment' },
-    { name: 'Tracing Missing Persons', href: '/services#missing-persons' },
+    { name: 'Finding People', href: '/services#finding-people' },
   ],
 }
 

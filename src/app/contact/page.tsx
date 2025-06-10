@@ -159,7 +159,7 @@ export default function Contact() {
                   <option value="school-zoning">School Zoning Checks</option>
                   <option value="background-checks">Background Checks</option>
                   <option value="stalker-harassment">Stalker & Harassment Investigations</option>
-                  <option value="missing-persons">Tracing Missing Persons</option>
+                  <option value="finding-people">Finding People</option>
                   <option value="document-serving">Document Serving</option>
                   <option value="other">Other</option>
                 </select>
@@ -254,6 +254,25 @@ export default function Contact() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
+        >
+          <h2 className="text-2xl font-bold tracking-tight text-foreground font-serif mb-8">Alternative Contact Methods</h2>
+          <div className="space-y-4">
+            <div className="flex items-center justify-center space-x-3">
+              <span className="text-lg font-semibold text-foreground">Phone:</span>
+              <a href="tel:0272268728" className="text-lg text-accent hover:text-accent/80 transition-colors">027 226 8728</a>
+            </div>
+            <div className="flex items-center justify-center space-x-3">
+              <span className="text-lg font-semibold text-foreground">Email:</span>
+              <a href="mailto:luke@insightinvestigations.co.nz" className="text-lg text-accent hover:text-accent/80 transition-colors">luke@insightinvestigations.co.nz</a>
+            </div>
+          </div>
+        </motion.div>
+
+        <motion.div
+          className="mx-auto mt-24 max-w-2xl text-center"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.8 }}
         >
           <h2 className="text-2xl font-bold tracking-tight text-foreground font-serif">Your Privacy Matters</h2>
           <p className="mt-4 text-base leading-7 text-secondary">
