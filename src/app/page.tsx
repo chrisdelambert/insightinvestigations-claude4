@@ -28,22 +28,22 @@ import {
 
 const services = [
   {
-    name: 'Surveillance & Monitoring',
-    description: 'Professional observation and evidence gathering with complete discretion.',
-    href: '/services#surveillance',
-    icon: EyeIcon,
-  },
-  {
     name: 'Cheating Partner Investigations',
-    description: 'When you need answers, we\'re here to help with sensitivity and professionalism.',
+    description: 'Discreet relationship investigations with modern approach and female support available.',
     href: '/services#cheating-partner',
     icon: HeartIcon,
   },
   {
-    name: 'School Zoning Checks',
-    description: 'Supporting fair enrolment through address verification investigations.',
+    name: 'School Zoning Verification',
+    description: 'Professional address verification supporting fair school enrollment across Canterbury.',
     href: '/services#school-zoning',
     icon: HomeIcon,
+  },
+  {
+    name: 'Surveillance & Monitoring',
+    description: 'Professional observation and evidence gathering with complete discretion.',
+    href: '/services#surveillance',
+    icon: EyeIcon,
   },
   {
     name: 'Background Checks',
@@ -134,8 +134,8 @@ export default function Home() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
             >
-              Based in Christchurch, we provide professional and discreet private investigation services throughout New Zealand. 
-              When you need answers, we provide clarity with complete confidentiality.
+              Based in Christchurch, we specialize in cheating partner investigations and school zoning verification throughout Canterbury. 
+              When you need answers, we provide clarity with complete confidentiality and a modern approach.
             </motion.p>
             
             <motion.div
@@ -172,8 +172,8 @@ export default function Home() {
               <div className="text-secondary">New Zealand Private Investigator</div>
             </div>
             <div className="flex flex-col items-center">
-              <div className="text-3xl font-bold text-foreground mb-2">Nationwide</div>
-              <div className="text-secondary">Services Across New Zealand</div>
+              <div className="text-3xl font-bold text-foreground mb-2">Canterbury</div>
+              <div className="text-secondary">Based & Specialized</div>
             </div>
             <div className="flex flex-col items-center">
               <div className="text-3xl font-bold text-foreground mb-2">Confidential</div>

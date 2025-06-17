@@ -3,7 +3,7 @@ import { Metadata } from 'next'
 const siteUrl = 'https://insightinvestigations.co.nz'
 const siteName = 'Insight Investigations'
 const defaultTitle = 'Insight Investigations | Professional Private Investigation Services'
-const defaultDescription = 'Licensed private investigator based in Christchurch, New Zealand. Professional surveillance, background checks, missing persons, and confidential investigation services throughout NZ.'
+const defaultDescription = 'Licensed private investigator based in Christchurch, Canterbury. Specializing in cheating partner investigations and school zoning verification. Modern approach with complete discretion throughout South Island NZ.'
 
 export interface SEOConfig {
   title?: string
@@ -73,24 +73,25 @@ export function generateMetadata({
     keywords: [
       'private investigator',
       'private detective',
+      'cheating partner investigation',
+      'infidelity investigator',
+      'school zoning investigation',
+      'address verification',
       'investigation services',
       'surveillance',
       'background checks',
       'missing persons',
       'Christchurch',
-      'New Zealand',
       'Canterbury',
+      'New Zealand',
       'licensed investigator',
       'professional investigation',
       'confidential investigation',
       'evidence gathering',
-      'legal investigation',
-      'insurance investigation',
       'matrimonial investigation',
-      'corporate investigation',
-      'process serving',
-      'asset investigation',
-      'fraud investigation'
+      'education sector investigation',
+      'South Island investigator',
+      'modern investigation services'
     ],
     classification: 'business',
     category: 'Investigation Services',
@@ -100,14 +101,14 @@ export function generateMetadata({
 
 // Predefined metadata for common pages
 export const homeMetadata = generateMetadata({
-  title: 'Professional Private Investigation Services',
-  description: 'Licensed private investigator based in Christchurch, New Zealand. Professional surveillance, background checks, missing persons, and confidential investigation services throughout NZ. Free consultation available.',
+  title: 'Cheating Partner & School Zoning Investigations | Christchurch',
+  description: 'Specialized private investigator in Christchurch, Canterbury. Expert in cheating partner investigations and school zoning verification. Modern approach, complete discretion. Licensed professional serving South Island NZ.',
   path: '/',
 })
 
 export const servicesMetadata = generateMetadata({
-  title: 'Investigation Services',
-  description: 'Professional private investigation services in New Zealand: surveillance, background checks, missing persons, school zoning verification, stalker investigations, and cheating partner investigations. Licensed and confidential.',
+  title: 'Private Investigation Services | Christchurch Canterbury',
+  description: 'Christchurch private investigator specializing in cheating partner investigations and school zoning verification. Professional surveillance, background checks, and confidential investigation services throughout Canterbury.',
   path: '/services',
 })
 
