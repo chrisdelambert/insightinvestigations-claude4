@@ -88,7 +88,7 @@ export default function About() {
                   description: 'Customized investigation strategies for both private individuals and businesses.',
                 },
                 {
-                  name: 'Female Investigator Option',
+                  name: 'Female Support Available',
                   description: 'Option to speak with a woman for sensitive matters, ensuring your comfort throughout the process.',
                 },
                 {

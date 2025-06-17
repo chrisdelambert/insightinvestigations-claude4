@@ -22,7 +22,7 @@ const faqCategories = [
         answer: 'Yes. All communication with Insight Investigations is completely private and handled with discretion.',
       },
       {
-        question: 'Can I speak with a female investigator?',
+        question: 'Can I speak with a female?',
         answer: 'Yes, we understand that some situations are sensitive and offer the option to speak with a woman throughout the process.',
       },
     ]

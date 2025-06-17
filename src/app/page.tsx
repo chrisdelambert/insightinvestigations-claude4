@@ -311,7 +311,7 @@ export default function Home() {
                   icon: ShieldCheckIcon
                 },
                 {
-                  name: 'Female Investigator Available',
+                  name: 'Female Support Available',
                   description: 'Option to speak with a woman for sensitive matters, ensuring your comfort and trust.',
                   icon: UserGroupIcon
                 },

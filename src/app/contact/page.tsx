@@ -265,6 +265,10 @@ export default function Contact() {
               <span className="text-lg font-semibold text-foreground">Email:</span>
               <a href="mailto:luke@insightinvestigations.co.nz" className="text-lg text-accent hover:text-accent/80 transition-colors">luke@insightinvestigations.co.nz</a>
             </div>
+            <div className="flex items-center justify-center space-x-3">
+              <span className="text-lg font-semibold text-foreground">Registered license number:</span>
+              <a href="mailto:luke@insightinvestigations.co.nz" className="text-lg text-accent hover:text-accent/80 transition-colors">l25-127544</a>
+            </div>
           </div>
         </motion.div>
 
