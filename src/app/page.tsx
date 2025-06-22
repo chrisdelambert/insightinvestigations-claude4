@@ -119,12 +119,12 @@ export default function Home() {
             >
               {heroInView ? (
                 <TypewriterText 
-                  text="Shining light on the truth" 
+                  text="Professional investigations across Christchurch" 
                   speed={80}
                   delay={500}
                 />
               ) : (
-                "Shining light on the truth"
+                "Professional investigations across Christchurch"
               )}
             </motion.h1>
             
