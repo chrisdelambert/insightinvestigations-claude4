@@ -13,6 +13,7 @@ export default function Contact() {
     message: '',
     preferWoman: false,
     callbackPreferred: false,
+    website: '', // honeypot field
   })
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
   const [errorMessage, setErrorMessage] = useState('')
@@ -21,6 +22,21 @@ export default function Contact() {
     e.preventDefault()
     setStatus('loading')
     setErrorMessage('')
+
+    // Honeypot validation - if filled, it's likely spam
+    if (formData.website) {
+      setStatus('error')
+      setErrorMessage('Spam detected. Please try again.')
+      return
+    }
+
+    // Additional basic spam detection
+    const messageWords = formData.message.trim().split(/\s+/)
+    if (messageWords.length < 5) {
+      setStatus('error')
+      setErrorMessage('Please provide a more detailed message about your inquiry.')
+      return
+    }
 
     try {
       const response = await fetch('https://nxcwo4svd6.execute-api.ap-southeast-2.amazonaws.com/main/contact', {
@@ -46,6 +62,7 @@ export default function Contact() {
         message: '',
         preferWoman: false,
         callbackPreferred: false,
+        website: '',
       })
     } catch (error) {
       setStatus('error')
@@ -163,6 +180,21 @@ export default function Contact() {
                   <option value="document-serving">Document Serving</option>
                   <option value="other">Other</option>
                 </select>
+              </div>
+
+              {/* Honeypot field - hidden from users but visible to bots */}
+              <div className="hidden">
+                <label htmlFor="website">Website (leave blank)</label>
+                <input
+                  type="text"
+                  name="website"
+                  id="website"
+                  value={formData.website}
+                  onChange={handleChange}
+                  tabIndex={-1}
+                  autoComplete="off"
+                  aria-hidden="true"
+                />
               </div>
 
               <div>
