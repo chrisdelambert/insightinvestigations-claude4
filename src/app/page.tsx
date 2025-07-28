@@ -30,37 +30,37 @@ const services = [
   {
     name: 'Cheating Partner Investigations',
     description: 'Discreet relationship investigations with modern approach and female support available.',
-    href: '/services#cheating-partner',
+    href: '/services/cheating-partner',
     icon: HeartIcon,
   },
   {
     name: 'School Zoning Verification',
     description: 'Professional address verification supporting fair school enrollment across Canterbury.',
-    href: '/services#school-zoning',
+    href: '/services/school-zoning',
     icon: HomeIcon,
   },
   {
     name: 'Surveillance & Monitoring',
     description: 'Professional observation and evidence gathering with complete discretion.',
-    href: '/services#surveillance',
+    href: '/services/surveillance',
     icon: EyeIcon,
   },
   {
     name: 'Background Checks',
     description: 'Know who you\'re dealing with before it matters.',
-    href: '/services#background-checks',
+    href: '/services/background-checks',
     icon: DocumentMagnifyingGlassIcon,
   },
   {
     name: 'Stalker & Harassment Investigations',
     description: 'Professional support to help you feel safe again.',
-    href: '/services#stalker-harassment',
+    href: '/services/stalker-harassment',
     icon: ShieldExclamationIcon,
   },
   {
     name: 'Finding People',
     description: 'Reconnecting people and recovering truth with care and discretion.',
-    href: '/services#finding-people',
+    href: '/services/finding-people',
     icon: UserIcon,
   },
 ]

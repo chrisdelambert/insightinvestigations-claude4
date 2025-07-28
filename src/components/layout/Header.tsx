@@ -6,20 +6,13 @@ import { usePathname } from 'next/navigation'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Bars3Icon, XMarkIcon, ChevronDownIcon } from '@heroicons/react/24/outline'
 
-const navigation = [
-  { name: 'Home', href: '/' },
-  { name: 'About', href: '/about' },
-  { name: 'Contact', href: '/contact' },
-  { name: 'FAQ', href: '/faq' },
-]
-
 const services = [
-  { name: 'Surveillance & Monitoring', href: '/services#surveillance' },
-  { name: 'Cheating Partner Investigations', href: '/services#cheating-partner' },
-  { name: 'School Zoning Checks', href: '/services#school-zoning' },
-  { name: 'Background Checks', href: '/services#background-checks' },
-  { name: 'Stalker & Harassment Investigations', href: '/services#stalker-harassment' },
-  { name: 'Finding People', href: '/services#finding-people' },
+  { name: 'Surveillance & Monitoring', href: '/services/surveillance' },
+  { name: 'Cheating Partner Investigations', href: '/services/cheating-partner' },
+  { name: 'School Zoning Checks', href: '/services/school-zoning' },
+  { name: 'Background Checks', href: '/services/background-checks' },
+  { name: 'Stalker & Harassment Investigations', href: '/services/stalker-harassment' },
+  { name: 'Finding People', href: '/services/finding-people' },
 ]
 
 export default function Header() {
@@ -80,8 +73,7 @@ export default function Header() {
             onMouseEnter={() => setServicesDropdownOpen(true)}
             onMouseLeave={() => setServicesDropdownOpen(false)}
           >
-            <Link
-              href="/services"
+            <button
               className={`relative text-sm font-medium transition-colors duration-200 flex items-center gap-1 ${
                 pathname.startsWith('/services') 
                   ? 'text-white' 
@@ -98,7 +90,7 @@ export default function Header() {
                   transition={{ duration: 0.3, ease: "easeInOut" }}
                 />
               )}
-            </Link>
+            </button>
             
             <AnimatePresence>
               {servicesDropdownOpen && (
@@ -271,13 +263,6 @@ export default function Header() {
                             transition={{ duration: 0.2 }}
                             className="ml-3 mt-2 space-y-1"
                           >
-                            <Link
-                              href="/services"
-                              className="block rounded-lg px-3 py-2 text-sm text-gray-400 hover:text-white hover:bg-white/5 transition-colors duration-200"
-                              onClick={() => setMobileMenuOpen(false)}
-                            >
-                              All Services
-                            </Link>
                             {services.map((service) => (
                               <Link
                                 key={service.name}
