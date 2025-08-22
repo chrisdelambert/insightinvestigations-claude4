@@ -135,6 +135,26 @@ export default function Header() {
             )}
           </Link>
           
+          {/* Blog */}
+          <Link
+            href="/blog"
+            className={`relative text-sm font-medium transition-colors duration-200 ${
+              pathname.startsWith('/blog') 
+                ? 'text-white' 
+                : 'text-gray-300 hover:text-white'
+            }`}
+          >
+            Blog
+            {pathname.startsWith('/blog') && (
+              <motion.div
+                className="absolute -bottom-1 left-0 right-0 h-0.5 bg-white"
+                initial={{ scaleX: 0 }}
+                animate={{ scaleX: 1 }}
+                transition={{ duration: 0.3, ease: "easeInOut" }}
+              />
+            )}
+          </Link>
+          
           {/* Contact */}
           <Link
             href="/contact"
@@ -289,6 +309,19 @@ export default function Header() {
                       onClick={() => setMobileMenuOpen(false)}
                     >
                       About
+                    </Link>
+                    
+                    {/* Blog */}
+                    <Link
+                      href="/blog"
+                      className={`-mx-3 block rounded-lg px-3 py-2 text-base font-medium transition-colors duration-200 ${
+                        pathname.startsWith('/blog') 
+                          ? 'text-white bg-white/10' 
+                          : 'text-gray-300 hover:text-white hover:bg-white/5'
+                      }`}
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      Blog
                     </Link>
                     
                     {/* Contact */}
