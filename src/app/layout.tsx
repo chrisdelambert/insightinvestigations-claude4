@@ -14,6 +14,19 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${inter.variable} ${playfair.variable}`}>
+      <head>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-1W2HV9SXX5"></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-1W2HV9SXX5');
+            `,
+          }}
+        />
+      </head>
       <ClientLayout className={`${inter.className} bg-background text-foreground antialiased`}>
         {children}
       </ClientLayout>
