@@ -8,6 +8,17 @@ import { CalendarDaysIcon, ArrowRightIcon } from '@heroicons/react/24/outline'
 
 const blogPosts = [
   {
+    id: 2,
+    slug: 'bug-sweeping-protecting-your-privacy',
+    title: 'Bug Sweeping – Protecting Your Privacy',
+    subtitle: 'Peace of Mind. Comprehensive. Secure.',
+    excerpt: 'Hidden cameras and listening devices are more common than most realise. Using professional TSCM equipment, Insight Investigations detects and removes covert devices from homes, rentals, vehicles, and offices — restoring your privacy and peace of mind.',
+    date: '2025-10-22',
+    readTime: '5 min read',
+    image: '/images/bug_detector_device.jpg',
+    category: 'Privacy & Security'
+  },
+  {
     id: 1,
     slug: 'cheating-partner-investigations',
     title: 'Our Cheating Partner Investigations',

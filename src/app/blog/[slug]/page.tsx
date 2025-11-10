@@ -13,6 +13,88 @@ import {
 } from '@heroicons/react/24/outline'
 
 const blogPosts = {
+  'bug-sweeping-protecting-your-privacy': {
+    id: 2,
+    slug: 'bug-sweeping-protecting-your-privacy',
+    title: 'Bug Sweeping – Protecting Your Privacy',
+    subtitle: 'Peace of Mind. Comprehensive. Secure.',
+    date: '2025-10-22',
+    readTime: '5 min read',
+    image: '/images/bug_detector_device.jpg',
+    category: 'Privacy & Security',
+    serviceLink: '/services/bug-sweeping',
+    content: `
+At Insight Investigations, we understand that privacy isn't a luxury — it's a necessity. Whether it's your home, your rental, your office, or even a short-term stay like an Airbnb, the thought that someone could be listening, watching, or tracking is deeply unsettling. That's where our bug sweeping service comes in.
+
+## The Hidden Reality
+
+You might assume that hidden cameras and listening devices belong in spy movies. But the truth is, they're more common than most people realise — and easier than ever to purchase and hide.
+
+A survey by Inman News revealed that respondents reported finding hidden cameras in Airbnb or rental properties an alarming one in ten times they stayed somewhere new. Meanwhile, a UK study conducted by YouGov found that 14% of people admitted to secretly recording someone without their knowledge.
+
+Judging by these statistics, covert recording devices may be far more widespread than expected. Estimates suggest that up to 10% of homes, offices, and short-term rentals could have hidden cameras or microphones at any given time.
+
+These aren't rare cases — they're warning signs that modern technology has made surveillance cheap, discreet, and accessible to anyone with a motive.
+
+## Why Bug Sweeping Makes Sense
+
+• Hidden cameras, microphones, and GPS trackers are small, affordable, and easy to conceal.
+
+• Short-term rentals, motels, and shared offices are frequent targets — devices can be planted and forgotten.
+
+• Business and legal environments are at risk of corporate spying or data theft.
+
+• Once in place, a hidden device can record or transmit data continuously without detection.
+
+• Public showers and toilets are particularly susceptible to being bugged.
+
+• Relationship breakups can end with devices being planted and privacy affected.
+
+A professional bug sweep helps identify and eliminate these risks — restoring confidence and privacy where it matters most.
+
+## What a Professional Bug Sweep Involves
+
+When you engage Insight Investigations, the process is discreet and precise — carried out by an expert using professional-grade TSCM (Technical Surveillance Counter-Measures) equipment.
+
+• **Confidential discussion** to understand your concerns and identify areas to inspect.
+
+• **Full sweep** of your home, office, vehicle, council building, or rental using specialised detection tools.
+
+• **Detection** of hidden cameras, microphones, GPS trackers, and wireless transmitters.
+
+• **Immediate advice and documentation** if a device is located.
+
+• **Summary report** detailing what was checked, what was found, and recommended next steps.
+
+• **Ongoing security advice**.
+
+## When You Should Consider a Sweep
+
+• Staying in an Airbnb, motel, or short-term rental, and want to ensure your privacy.
+
+• Moving into a new rental, office, or commercial space and need reassurance before settling in.
+
+• Holding meetings in council buildings, shared offices, or public venues where confidentiality matters.
+
+• After a breakup, tenancy dispute, or workplace conflict, when you suspect monitoring.
+
+• Experiencing unusual phone interference, fast battery drain, or suspicious tracking alerts.
+
+• Managing sensitive business, legal, or personal information that must remain private.
+
+## Taking the First Step
+
+You don't need to be certain — only suspicious. A professional sweep doesn't assume you're being watched; it confirms whether you are. Contact Insight Investigations for a confidential consultation. We'll explain the process, carry out a comprehensive sweep, and provide a clear, evidence-based report — so you can make informed decisions and take back control of your privacy.
+
+Visit [insightinvestigations.co.nz](/) for a free, confidential consultation.
+
+---
+
+**Summary:**
+
+Hidden cameras and listening devices are more common than most realise. Using professional TSCM equipment, Insight Investigations detects and removes covert devices from homes, rentals, vehicles, and offices — restoring your privacy and peace of mind.
+    `
+  },
   'cheating-partner-investigations': {
     id: 1,
     slug: 'cheating-partner-investigations',
@@ -22,6 +104,7 @@ const blogPosts = {
     readTime: '5 min read',
     image: '/images/cheating_partner_image_converted.jpg',
     category: 'Investigations',
+    serviceLink: '/services/cheating-partner',
     content: `
 At Insight Investigations, we specialise in one of the most emotionally difficult areas of private investigation: cheating partners. If you suspect your partner is being unfaithful, you're not alone and you're not wrong for wanting answers.
 
@@ -254,7 +337,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
                 <ArrowRightIcon className="w-4 h-4 ml-2" />
               </Link>
               <Link
-                href="/services/cheating-partner"
+                href={post.serviceLink}
                 className="inline-flex items-center rounded-lg border border-gray-600 bg-gray-800 px-6 py-3 text-base font-semibold text-white hover:bg-gray-700 transition-all duration-200"
               >
                 Learn More About This Service

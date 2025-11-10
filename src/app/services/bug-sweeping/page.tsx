@@ -7,39 +7,41 @@ import Image from 'next/image'
 import { ServiceSchema } from '../../../components/structured-data/ServiceSchema'
 
 const service = {
-  id: 'finding-people',
-  name: 'Finding People',
-  description: 'Reconnecting people, finding closure',
-  longDescription: 'Whether it\'s a long-lost family member, someone avoiding legal responsibility, or a person who has simply vanished — not knowing where they are can leave you feeling stuck and helpless.',
-  image: '/images/Missing Person Image.png',
+  id: 'bug-sweeping',
+  name: 'Bug Sweeping',
+  description: 'Peace of Mind. Comprehensive. Secure.',
+  longDescription: 'When you suspect someone\'s listening, watching, or tracking you — you need more than guesswork. You need proof. Insight Investigations is the only licensed private investigation agency based in the South Island equipped with professional-grade TSCM (Technical Surveillance Counter-Measures) technology. We locate and identify hidden cameras, covert microphones, GPS trackers, and other surveillance devices that compromise your privacy.',
+  image: '/images/Bug_Hunter_NoBackground.png',
   features: [
-    'Investigative database searches',
-    'Public records and digital footprint analysis',
-    'Social media and online research',
-    'Discreet enquiries and fieldwork',
-    'Collaboration with third parties where appropriate',
+    'Confidential discussion to understand your concerns and locations to inspect.',
+    'Full sweep of your home, office, or vehicle using professional Bug Hunter Pro equipment.',
+    'Detection of hidden cameras, microphones, GPS trackers, and wireless transmitters.',
+    'Immediate advice if devices are found — including photos and removal options.',
+    'Summary report outlining what was checked and the results of the sweep.',
+    'Security advice going forward.',
   ],
   useCases: [
-    'Locating a missing family member or friend',
-    'Reuniting with someone from your past',
-    'Tracing a debtor or person avoiding payment',
-    'Finding a witness or former employee',
-    'Locating someone for legal or estate matters',
-    'Helping with adoption-related searches',
+    'Staying in an Airbnb, motel, or short-term rental and want to be sure there are no hidden cameras.',
+    'Moving into a new rental, or commercial space and need peace of mind before you settle in.',
+    'Responsible for council buildings and amenities, shared offices, or public venues where confidentiality matters.',
+    'Finding signs that someone may have placed a listening device, tracker, or hidden camera in your home, vehicle, or workplace.',
+    'After a breakup, flat dispute, or workplace conflict, wanting to confirm you\'re not being monitored.',
+    'Noticing strange phone interference, rapid battery drain, or unexpected tracking notifications.',
+    'Managing sensitive business, legal, or personal information where privacy and security are essential.',
   ],
 }
 
-export default function FindingPeoplePage() {
+export default function BugSweepingPage() {
   return (
     <div className="relative isolate">
       <ServiceSchema service={service} />
-      
+
       {/* Hero section */}
       <div className="relative isolate -z-10">
         <div className="overflow-hidden">
           <div className="mx-auto max-w-7xl px-6 pb-32 pt-36 sm:pt-60 lg:px-8 lg:pt-32">
             <div className="mx-auto max-w-2xl text-center">
-              <motion.h1 
+              <motion.h1
                 className="text-4xl font-bold tracking-tight text-foreground sm:text-6xl font-serif"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -47,7 +49,7 @@ export default function FindingPeoplePage() {
               >
                 {service.name}
               </motion.h1>
-              <motion.p 
+              <motion.p
                 className="mt-6 text-lg leading-8 text-secondary"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -70,15 +72,14 @@ export default function FindingPeoplePage() {
             transition={{ duration: 0.8 }}
           >
             <div className="lg:sticky lg:top-24">
-              <div className="relative mb-8 overflow-hidden rounded-xl">
+              <div className="relative mb-8 overflow-hidden rounded-xl bg-background p-8">
                 <Image
                   src={service.image}
                   alt={service.name}
                   width={600}
                   height={400}
-                  className="aspect-[3/2] w-full object-cover"
+                  className="w-full h-auto object-contain"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
               </div>
               <p className="mt-4 text-xl text-accent">{service.description}</p>
               <p className="mt-6 text-base leading-7 text-secondary">{service.longDescription}</p>

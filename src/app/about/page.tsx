@@ -66,7 +66,7 @@ export default function About() {
             <div>
               <h2 className="text-2xl font-bold tracking-tight text-foreground font-serif">Led by Luke Valentine</h2>
               <p className="mt-6 text-base leading-7 text-secondary">
-                Luke Valentine is a Licensed Private Investigator with a background in criminal and insurance investigations, alongside years of experience in the communications industry. His diverse skill set means every case is approached with clear insight, attention to detail, and strong interpersonal awareness.
+                Luke Valentine is a Licensed Private Investigator with a background in criminal and insurance investigations, alongside years of experience in the communications industry. His diverse skill set means every case is approached with clear insight, attention to detail, and strong interpersonal awareness. Luke is a member of the NZIPI: New Zealand Institute of Private Investigators.
               </p>
             </div>
           </div>
@@ -80,12 +80,12 @@ export default function About() {
                   description: 'A fresh perspective without the traditional law enforcement background, bringing innovative solutions to modern challenges.',
                 },
                 {
-                  name: 'Total Discretion',
-                  description: 'Complete confidentiality in every case, protecting your privacy from start to finish.',
+                  name: 'Bug Sweeper',
+                  description: 'South Island\'s only bug-sweeping tech.',
                 },
                 {
-                  name: 'Tailored Support',
-                  description: 'Customized investigation strategies for both private individuals and businesses.',
+                  name: 'Christchurch Based',
+                  description: 'Proudly Christchurch and South Island wide.',
                 },
                 {
                   name: 'Female Support Available',
@@ -96,8 +96,8 @@ export default function About() {
                   description: 'Transparent process and honest communication at every step.',
                 },
                 {
-                  name: 'Professional Documentation',
-                  description: 'Clear, court-ready documentation where needed, meeting legal standards.',
+                  name: 'Cheating Partner Investigations',
+                  description: 'You know something\'s not right. We\'ll confirm it either way.',
                 },
               ].map((feature) => (
                 <motion.div

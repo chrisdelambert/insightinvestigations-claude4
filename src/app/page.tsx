@@ -7,12 +7,12 @@ import Link from 'next/link'
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver'
 import TypewriterText from '../components/TypewriterText'
 import { LocalBusinessSchema } from '../components/structured-data/LocalBusinessSchema'
-import { 
-  EyeIcon, 
-  HeartIcon, 
-  HomeIcon, 
-  DocumentMagnifyingGlassIcon, 
-  ShieldExclamationIcon, 
+import {
+  EyeIcon,
+  HeartIcon,
+  HomeIcon,
+  DocumentMagnifyingGlassIcon,
+  ShieldExclamationIcon,
   UserIcon,
   LightBulbIcon,
   ShieldCheckIcon,
@@ -23,10 +23,17 @@ import {
   ChatBubbleLeftRightIcon,
   DocumentTextIcon,
   MagnifyingGlassIcon,
-  ChartBarIcon
+  ChartBarIcon,
+  SignalIcon
 } from '@heroicons/react/24/outline'
 
 const services = [
+  {
+    name: 'Bug Sweeper',
+    description: 'Christchurch and the South Island\'s only professional bug-sweeping tech to protect your privacy. The Bug Hunter Pro scans for hidden cameras, GPS trackers, and covert listening devices concealed in walls, vehicles, and everyday objects.',
+    href: '/services/bug-sweeping',
+    icon: SignalIcon,
+  },
   {
     name: 'Cheating Partner Investigations',
     description: 'Discreet relationship investigations with modern approach and female support available.',
@@ -75,18 +82,6 @@ export default function Home() {
       <LocalBusinessSchema />
       {/* Hero section */}
       <div className="relative isolate min-h-screen bg-background">
-        {/* Background image with overlay */}
-        <div className="absolute inset-0">
-          <Image
-            src="/images/investigator-at-desk-maps.png"
-            alt="Professional investigation workspace"
-            fill
-            className="object-cover opacity-20"
-            priority
-          />
-          <div className="absolute inset-0 bg-background/90" />
-        </div>
-        
         {/* Content */}
         <div className="relative mx-auto max-w-7xl px-6 pt-24 pb-12 lg:px-8">
           {/* Logo */}
@@ -129,13 +124,22 @@ export default function Home() {
             </motion.h1>
             
             <motion.p
+              className="text-lg leading-8 text-secondary mb-6 max-w-3xl mx-auto font-semibold"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.5 }}
+            >
+              Member of the NZIPI – New Zealand Institute of Private Investigators
+            </motion.p>
+
+            <motion.p
               className="text-xl leading-8 text-secondary mb-12 max-w-3xl mx-auto"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.6 }}
+              transition={{ duration: 0.8, delay: 0.7 }}
             >
-              Based in Christchurch, we specialize in cheating partner investigations and school zoning verification throughout Canterbury. 
-              When you need answers, we provide clarity with complete confidentiality and a modern approach.
+              Based in Christchurch, we specialize in bug sweeping, cheating partner investigations and school zoning verification throughout Canterbury.
+              When you need answers, and closure, we provide clarity with complete confidentiality and a modern approach.
             </motion.p>
             
             <motion.div
@@ -203,12 +207,52 @@ export default function Home() {
           </motion.div>
           
           <div className="mx-auto mt-20 max-w-6xl">
+            {/* Featured Service - Bug Sweeper */}
+            {(() => {
+              const featuredService = services[0]
+              const FeaturedIcon = featuredService.icon
+              return (
+                <div className="mb-12 opacity-0 animate-fade-in">
+                  <div className="group relative bg-gradient-to-br from-accent/20 to-accent/10 rounded-3xl shadow-2xl hover:shadow-3xl transition-all duration-300 overflow-hidden border-2 border-accent/30">
+                    <Link href={featuredService.href} className="block p-10 lg:p-12">
+                      <div className="flex flex-col lg:flex-row items-start lg:items-center gap-8">
+                        <div className="flex-shrink-0">
+                          <div className="w-20 h-20 lg:w-24 lg:h-24 bg-accent/20 rounded-2xl flex items-center justify-center group-hover:bg-accent/30 transition-colors duration-200 border border-accent/40">
+                            <FeaturedIcon
+                              className="w-10 h-10 lg:w-12 lg:h-12 text-accent"
+                              aria-hidden="true"
+                            />
+                          </div>
+                        </div>
+                        <div className="flex-1">
+                          <div className="inline-block px-3 py-1 mb-3 text-xs font-semibold text-accent bg-accent/10 rounded-full border border-accent/30">
+                            FEATURED SERVICE
+                          </div>
+                          <h3 className="text-2xl lg:text-3xl font-bold text-foreground group-hover:text-accent transition-colors duration-200 font-serif mb-4">
+                            {featuredService.name}
+                          </h3>
+                          <p className="text-base lg:text-lg text-secondary leading-relaxed">
+                            {featuredService.description}
+                          </p>
+                          <div className="mt-6 flex items-center text-base font-semibold text-accent group-hover:text-accent/80">
+                            Learn more about our bug sweeping service
+                            <span aria-hidden="true" className="ml-2 group-hover:translate-x-1 transition-transform duration-200">→</span>
+                          </div>
+                        </div>
+                      </div>
+                    </Link>
+                  </div>
+                </div>
+              )
+            })()}
+
+            {/* Other Services */}
             <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
-              {services.map((service, index) => (
-                <div 
+              {services.slice(1).map((service, index) => (
+                <div
                   key={service.name}
                   className="group relative bg-gray-800 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-700 opacity-0 animate-fade-in"
-                  style={{ animationDelay: `${index * 200}ms` }}
+                  style={{ animationDelay: `${(index + 1) * 200}ms` }}
                 >
                   <Link href={service.href} className="block p-8">
                     <div className="flex items-start space-x-6">
@@ -228,7 +272,7 @@ export default function Home() {
                           {service.description}
                         </p>
                         <div className="mt-4 flex items-center text-sm font-semibold text-white group-hover:text-gray-200">
-                          Learn more 
+                          Learn more
                           <span aria-hidden="true" className="ml-2 group-hover:translate-x-1 transition-transform duration-200">→</span>
                         </div>
                       </div>
@@ -275,7 +319,7 @@ export default function Home() {
               What Sets Us Apart
             </p>
             <p className="mt-6 text-xl leading-8 text-gray-300">
-              Professional expertise combined with a modern, client-focused approach to private investigation.
+              We specialise in cheating partner investigations, bug sweeping, and school zoning verification. We are the only investigators based in the South Island with bug sweeping equipment.
             </p>
           </motion.div>
 
@@ -546,6 +590,102 @@ export default function Home() {
             <p className="mt-6 text-sm text-gray-400">
               All consultations are completely confidential • No obligation • Licensed professional
             </p>
+          </motion.div>
+        </div>
+      </div>
+
+      {/* Instagram section */}
+      <div className="relative isolate py-24 px-6 lg:px-8 bg-background">
+        <div className="mx-auto max-w-4xl">
+          <motion.div
+            className="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-12"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            {/* Instagram Image */}
+            <div className="relative flex justify-center flex-shrink-0">
+              <a
+                href="https://www.instagram.com/cheaters.co.nz?igsh=MTZtbDFrOHQzd25ndw=="
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block group"
+              >
+                <div className="relative w-48 h-48 rounded-full border-4 border-white overflow-hidden shadow-lg">
+                  <Image
+                    src="/images/Cheaters by Insight.PNG"
+                    alt="Follow @cheaters.co.nz on Instagram"
+                    width={192}
+                    height={192}
+                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent group-hover:from-black/50 transition-all duration-300" />
+
+                  {/* Instagram icon overlay */}
+                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div className="bg-white/90 rounded-full p-3">
+                      <svg
+                        className="w-8 h-8 text-gray-900"
+                        fill="currentColor"
+                        viewBox="0 0 24 24"
+                        aria-hidden="true"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          d="M12.017 0C8.396 0 7.929.016 6.706.084 5.481.152 4.677.355 3.967.63a7.987 7.987 0 00-2.887 1.88A7.987 7.987 0 00.63 5.397c-.276.71-.479 1.514-.547 2.739C.016 9.359 0 9.826 0 13.447c0 3.621.016 4.088.084 5.311.068 1.225.271 2.03.547 2.739a7.987 7.987 0 001.88 2.887 7.987 7.987 0 002.887 1.88c.71.276 1.514.479 2.739.547 1.223.068 1.69.084 5.311.084 3.621 0 4.088-.016 5.311-.084 1.225-.068 2.03-.271 2.739-.547a7.987 7.987 0 002.887-1.88 7.987 7.987 0 001.88-2.887c.276-.71.479-1.514.547-2.739.068-1.223.084-1.69.084-5.311 0-3.621-.016-4.088-.084-5.311-.068-1.225-.271-2.03-.547-2.739a7.987 7.987 0 00-1.88-2.887A7.987 7.987 0 0018.707.63C17.997.355 17.193.152 15.968.084 14.745.016 14.278 0 10.657 0L12.017 0zm0 2.17c3.456 0 3.87.013 5.237.076 1.28.06 1.957.272 2.417.45.607.236 1.04.519 1.495.974.455.455.738.888.974 1.495.178.46.39 1.137.45 2.417.063 1.367.076 1.781.076 5.237 0 3.456-.013 3.87-.076 5.237-.06 1.28-.272 1.957-.45 2.417-.236.607-.519 1.04-.974 1.495-.455.455-.888.738-1.495.974-.46.178-1.137.39-2.417.45-1.367.063-1.781.076-5.237.076-3.456 0-3.87-.013-5.237-.076-1.28-.06-1.957-.272-2.417-.45-.607-.236-1.04-.519-1.495-.974-.455-.455-.738-.888-.974-1.495-.178-.46-.39-1.137-.45-2.417C2.183 15.887 2.17 15.473 2.17 12.017c0-3.456.013-3.87.076-5.237.06-1.28.272-1.957.45-2.417.236-.607.519-1.04.974-1.495.455-.455.888-.738 1.495-.974.46-.178 1.137-.39 2.417-.45C8.149 2.183 8.563 2.17 12.017 2.17zm0 3.623a6.207 6.207 0 100 12.414 6.207 6.207 0 000-12.414zM12.017 9.66a2.34 2.34 0 110 4.68 2.34 2.34 0 010-4.68zm4.577-2.354a1.45 1.45 0 11-2.9 0 1.45 1.45 0 012.9 0z"
+                          clipRule="evenodd"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+
+            {/* Instagram Text Content */}
+            <div className="space-y-6 text-center lg:text-left">
+              <div>
+                <h3 className="text-2xl font-bold tracking-tight text-foreground font-serif mb-4">
+                  Follow Our Investigation Stories
+                </h3>
+                <p className="text-lg leading-7 text-secondary">
+                  Follow our work and case insights on Instagram{' '}
+                  <a
+                    href="https://www.instagram.com/cheaters.co.nz?igsh=MTZtbDFrOHQzd25ndw=="
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-accent hover:text-accent/80 transition-colors duration-200 font-semibold"
+                  >
+                    @cheaters.co.nz
+                  </a>
+                  , where we share anonymised stories, relationship red flags, and what really happens behind closed doors.
+                </p>
+              </div>
+
+              <div className="pt-4">
+                <a
+                  href="https://www.instagram.com/cheaters.co.nz?igsh=MTZtbDFrOHQzd25ndw=="
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 rounded-md bg-accent/10 px-4 py-2.5 text-sm font-semibold text-accent shadow-sm hover:bg-accent/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent transition-colors duration-200"
+                >
+                  <svg
+                    className="w-4 h-4"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M12.017 0C8.396 0 7.929.016 6.706.084 5.481.152 4.677.355 3.967.63a7.987 7.987 0 00-2.887 1.88A7.987 7.987 0 00.63 5.397c-.276.71-.479 1.514-.547 2.739C.016 9.359 0 9.826 0 13.447c0 3.621.016 4.088.084 5.311.068 1.225.271 2.03.547 2.739a7.987 7.987 0 001.88 2.887 7.987 7.987 0 002.887 1.88c.71.276 1.514.479 2.739.547 1.223.068 1.69.084 5.311.084 3.621 0 4.088-.016 5.311-.084 1.225-.068 2.03-.271 2.739-.547a7.987 7.987 0 002.887-1.88 7.987 7.987 0 001.88-2.887c.276-.71.479-1.514.547-2.739.068-1.223.084-1.69.084-5.311 0-3.621-.016-4.088-.084-5.311-.068-1.225-.271-2.03-.547-2.739a7.987 7.987 0 00-1.88-2.887A7.987 7.987 0 0018.707.63C17.997.355 17.193.152 15.968.084 14.745.016 14.278 0 10.657 0L12.017 0zm0 2.17c3.456 0 3.87.013 5.237.076 1.28.06 1.957.272 2.417.45.607.236 1.04.519 1.495.974.455.455.738.888.974 1.495.178.46.39 1.137.45 2.417.063 1.367.076 1.781.076 5.237 0 3.456-.013 3.87-.076 5.237-.06 1.28-.272 1.957-.45 2.417-.236.607-.519 1.04-.974 1.495-.455.455-.888.738-1.495.974-.46.178-1.137.39-2.417.45-1.367.063-1.781.076-5.237.076-3.456 0-3.87-.013-5.237-.076-1.28-.06-1.957-.272-2.417-.45-.607-.236-1.04-.519-1.495-.974-.455-.455-.738-.888-.974-1.495-.178-.46-.39-1.137-.45-2.417C2.183 15.887 2.17 15.473 2.17 12.017c0-3.456.013-3.87.076-5.237.06-1.28.272-1.957.45-2.417.236-.607.519-1.04.974-1.495.455-.455.888-.738 1.495-.974.46-.178 1.137-.39 2.417-.45C8.149 2.183 8.563 2.17 12.017 2.17zm0 3.623a6.207 6.207 0 100 12.414 6.207 6.207 0 000-12.414zM12.017 9.66a2.34 2.34 0 110 4.68 2.34 2.34 0 010-4.68zm4.577-2.354a1.45 1.45 0 11-2.9 0 1.45 1.45 0 012.9 0z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                  Follow on Instagram
+                </a>
+              </div>
+            </div>
           </motion.div>
         </div>
       </div>

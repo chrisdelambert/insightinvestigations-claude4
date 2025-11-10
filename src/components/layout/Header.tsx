@@ -7,6 +7,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { Bars3Icon, XMarkIcon, ChevronDownIcon } from '@heroicons/react/24/outline'
 
 const services = [
+  { name: 'Bug Sweeping', href: '/services/bug-sweeping' },
   { name: 'Surveillance & Monitoring', href: '/services/surveillance' },
   { name: 'Cheating Partner Investigations', href: '/services/cheating-partner' },
   { name: 'School Zoning Checks', href: '/services/school-zoning' },

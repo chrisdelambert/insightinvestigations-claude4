@@ -298,8 +298,13 @@ export default function Contact() {
               <a href="mailto:luke@insightinvestigations.co.nz" className="text-lg text-accent hover:text-accent/80 transition-colors">luke@insightinvestigations.co.nz</a>
             </div>
             <div className="flex items-center justify-center space-x-3">
-              {/* <span className="text-lg font-semibold text-foreground">Registered license number:</span> */}
-              <a href="mailto:luke@insightinvestigations.co.nz" className="text-lg text-accent hover:text-accent/80 transition-colors">25-127544</a>
+              <span className="text-lg font-semibold text-foreground">License #:</span>
+              <span className="text-lg text-foreground">25-127544</span>
+            </div>
+            <div className="flex flex-col items-center justify-center space-y-1 mt-6">
+              <span className="text-lg font-semibold text-foreground">Mailing Address:</span>
+              <span className="text-lg text-foreground">PO Box 27125</span>
+              <span className="text-lg text-foreground">Shirley, Christchurch 8640</span>
             </div>
           </div>
         </motion.div>
