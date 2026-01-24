@@ -16,10 +16,17 @@ const services = [
   { name: 'Finding People', href: '/services/finding-people' },
 ]
 
+const privacyItems = [
+  { name: 'Privacy Certification', href: '/privacy-certification' },
+  { name: 'Privacy Certification FAQs', href: '/privacy-certification/faq' },
+]
+
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false)
+  const [privacyDropdownOpen, setPrivacyDropdownOpen] = useState(false)
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false)
+  const [mobilePrivacyOpen, setMobilePrivacyOpen] = useState(false)
   const pathname = usePathname()
 
   return (
@@ -115,13 +122,61 @@ export default function Header() {
               )}
             </AnimatePresence>
           </div>
-          
+
+          {/* Privacy Dropdown */}
+          <div
+            className="relative"
+            onMouseEnter={() => setPrivacyDropdownOpen(true)}
+            onMouseLeave={() => setPrivacyDropdownOpen(false)}
+          >
+            <button
+              className={`relative text-sm font-medium transition-colors duration-200 flex items-center gap-1 ${
+                pathname.startsWith('/privacy-certification')
+                  ? 'text-white'
+                  : 'text-gray-300 hover:text-white'
+              }`}
+            >
+              Privacy
+              <ChevronDownIcon className="h-3 w-3" />
+              {pathname.startsWith('/privacy-certification') && (
+                <motion.div
+                  className="absolute -bottom-1 left-0 right-0 h-0.5 bg-white"
+                  initial={{ scaleX: 0 }}
+                  animate={{ scaleX: 1 }}
+                  transition={{ duration: 0.3, ease: "easeInOut" }}
+                />
+              )}
+            </button>
+
+            <AnimatePresence>
+              {privacyDropdownOpen && (
+                <motion.div
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
+                  transition={{ duration: 0.2 }}
+                  className="absolute top-full left-0 mt-2 w-64 bg-[#16191c] border border-white/10 rounded-lg shadow-xl py-2 z-50"
+                >
+                  {privacyItems.map((item) => (
+                    <Link
+                      key={item.name}
+                      href={item.href}
+                      className="block px-4 py-3 text-sm text-gray-300 hover:text-white hover:bg-white/5 transition-colors duration-200"
+                    >
+                      {item.name}
+                    </Link>
+                  ))}
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+
           {/* About */}
           <Link
             href="/about"
             className={`relative text-sm font-medium transition-colors duration-200 ${
-              pathname === '/about' 
-                ? 'text-white' 
+              pathname === '/about'
+                ? 'text-white'
                 : 'text-gray-300 hover:text-white'
             }`}
           >
@@ -135,7 +190,7 @@ export default function Header() {
               />
             )}
           </Link>
-          
+
           {/* Blog */}
           <Link
             href="/blog"
@@ -299,19 +354,57 @@ export default function Header() {
                       </AnimatePresence>
                     </div>
                     
+                    {/* Mobile Privacy Menu */}
+                    <div>
+                      <button
+                        className={`-mx-3 w-full flex items-center justify-between rounded-lg px-3 py-2 text-base font-medium transition-colors duration-200 ${
+                          pathname.startsWith('/privacy-certification')
+                            ? 'text-white bg-white/10'
+                            : 'text-gray-300 hover:text-white hover:bg-white/5'
+                        }`}
+                        onClick={() => setMobilePrivacyOpen(!mobilePrivacyOpen)}
+                      >
+                        Privacy
+                        <ChevronDownIcon className={`h-4 w-4 transition-transform duration-200 ${mobilePrivacyOpen ? 'rotate-180' : ''}`} />
+                      </button>
+
+                      <AnimatePresence>
+                        {mobilePrivacyOpen && (
+                          <motion.div
+                            initial={{ opacity: 0, height: 0 }}
+                            animate={{ opacity: 1, height: 'auto' }}
+                            exit={{ opacity: 0, height: 0 }}
+                            transition={{ duration: 0.2 }}
+                            className="ml-3 mt-2 space-y-1"
+                          >
+                            {privacyItems.map((item) => (
+                              <Link
+                                key={item.name}
+                                href={item.href}
+                                className="block rounded-lg px-3 py-2 text-sm text-gray-400 hover:text-white hover:bg-white/5 transition-colors duration-200"
+                                onClick={() => setMobileMenuOpen(false)}
+                              >
+                                {item.name}
+                              </Link>
+                            ))}
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </div>
+
                     {/* About */}
                     <Link
                       href="/about"
                       className={`-mx-3 block rounded-lg px-3 py-2 text-base font-medium transition-colors duration-200 ${
-                        pathname === '/about' 
-                          ? 'text-white bg-white/10' 
+                        pathname === '/about'
+                          ? 'text-white bg-white/10'
                           : 'text-gray-300 hover:text-white hover:bg-white/5'
                       }`}
                       onClick={() => setMobileMenuOpen(false)}
                     >
                       About
                     </Link>
-                    
+
                     {/* Blog */}
                     <Link
                       href="/blog"

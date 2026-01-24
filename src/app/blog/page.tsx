@@ -8,6 +8,17 @@ import { CalendarDaysIcon, ArrowRightIcon } from '@heroicons/react/24/outline'
 
 const blogPosts = [
   {
+    id: 3,
+    slug: 'reconnecting-the-missing-pieces',
+    title: 'Reconnecting the Missing Pieces',
+    subtitle: 'Because some questions don\'t fade.',
+    excerpt: 'If someone disappeared from your life and you\'ve never stopped wondering why, you\'re not alone. Family estrangement and long-term loss of contact affect millions of people. Insight Investigations helps you uncover answers through lawful research, digital analysis, and discreet inquiries.',
+    date: '2026-01-24',
+    readTime: '5 min read',
+    image: '/images/Faded memories and quiet moments.png',
+    category: 'Investigations'
+  },
+  {
     id: 2,
     slug: 'bug-sweeping-protecting-your-privacy',
     title: 'Bug Sweeping – Protecting Your Privacy',

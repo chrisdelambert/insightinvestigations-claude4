@@ -13,6 +13,94 @@ import {
 } from '@heroicons/react/24/outline'
 
 const blogPosts = {
+  'reconnecting-the-missing-pieces': {
+    id: 3,
+    slug: 'reconnecting-the-missing-pieces',
+    title: 'Reconnecting the Missing Pieces',
+    subtitle: 'Because some questions don\'t fade.',
+    date: '2026-01-24',
+    readTime: '5 min read',
+    image: '/images/Faded memories and quiet moments.png',
+    category: 'Investigations',
+    serviceLink: '/services/finding-people',
+    content: `
+There's probably someone you still think about.
+
+Not in a dramatic way. Just quietly. A name that comes up now and then. A person you once knew well, who somehow slipped out of your life without a proper ending.
+
+It might be a family member you lost contact with years ago. A parent, sibling, or child with whom the relationship was fractured and was never repaired. A close friend who drifted away as life got busy. Or someone whose disappearance has never fully made sense.
+
+Most people don't talk about this out loud. But the question stays with them.
+
+**What actually happened to them?**
+
+After years of doing this work, I can tell you that wondering is far more common than people admit.
+
+## How People Really Become Lost
+
+In most cases, no one vanishes overnight.
+
+What I see, again and again, is a slow unravelling. A move to a new city. A change of phone number. A name change. A relationship breakdown. Then time does the rest.
+
+People assume social media makes finding someone easy. In reality, it often makes it harder. Profiles disappear. Details don't line up. You think you've found the right person, only to realise it's not them at all.
+
+And this situation isn't rare:
+
+• Around one in four people are estranged from at least one close family member, often without closure.
+
+• Tracing and reunification services help thousands of families reconnect every year, many after decades apart.
+
+• In missing-person-style investigations, most cases involve ordinary people who simply lost contact, not crime or abduction.
+
+What makes it difficult isn't just the absence.
+
+It's the unanswered questions.
+
+Are they okay?
+Did they leave on purpose?
+Would they even want to hear from you now?
+
+For many people, that uncertainty carries more weight than any truth might.
+
+## How I Help You
+
+My job is to find answers, not to create drama or force outcomes.
+
+Every case is different, but when I'm helping someone locate a long-lost person, the work often involves:
+
+• **Detailed background research**: Following historical addresses, identity changes, and long-term records.
+
+• **Digital and online analysis**: Picking up indirect or forgotten online traces that don't show up in simple searches.
+
+• **Lawful public record checks**: Using legitimate information sources that most people don't know how to access or interpret.
+
+• **Careful local inquiries**: When appropriate, make discreet checks without drawing attention or causing distress.
+
+I don't force contact. If someone is located, everything is handled ethically and with care. Privacy, boundaries, and the emotional reality on both sides always come first.
+
+## What This Gives You
+
+It gives you clarity.
+
+Sometimes that means reconnecting. Sometimes it simply confirms that the person is safe and living their life. And sometimes it provides closure to something that's been left unresolved for far too long.
+
+Whatever the outcome, you're no longer filling in the gaps with guesses and "what ifs".
+
+Knowing what happened allows you to move forward with understanding rather than uncertainty.
+
+## Take the First Step
+
+If there's someone you've wondered about for years, you don't have to keep carrying that question on your own.
+
+I offer confidential, no-obligation conversations where we talk through your situation properly and realistically - no pressure, no promises that can't be kept.
+
+---
+
+**Summary:**
+
+If someone disappeared from your life and you've never stopped wondering why, you're not alone. Family estrangement and long-term loss of contact affect millions of people. Insight Investigations helps you uncover answers through lawful research, digital analysis, and discreet inquiries - because in my experience, clarity is almost always better than wondering.
+    `
+  },
   'bug-sweeping-protecting-your-privacy': {
     id: 2,
     slug: 'bug-sweeping-protecting-your-privacy',

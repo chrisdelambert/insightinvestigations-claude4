@@ -102,7 +102,7 @@ export function generateMetadata({
 // Predefined metadata for common pages
 export const homeMetadata = generateMetadata({
   title: 'Cheating Partner & School Zoning Investigations | Christchurch',
-  description: 'Specialized private investigator in Christchurch, Canterbury. Expert in cheating partner investigations and school zoning verification. Modern approach, complete discretion. Licensed professional serving South Island NZ.',
+  description: 'Specialised private investigators in hidden camera bug sweeping, cheating partner investigations, and Privacy Certification, delivering reassurance where privacy and trust matter.',
   path: '/',
 })
 
