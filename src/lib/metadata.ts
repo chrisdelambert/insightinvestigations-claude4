@@ -3,7 +3,7 @@ import { Metadata } from 'next'
 const siteUrl = 'https://insightinvestigations.co.nz'
 const siteName = 'Insight Investigations'
 const defaultTitle = 'Insight Investigations | Professional Private Investigation Services'
-const defaultDescription = 'Licensed private investigator based in Christchurch, Canterbury. Specializing in cheating partner investigations and school zoning verification. Modern approach with complete discretion throughout South Island NZ.'
+const defaultDescription = 'Licensed private investigator based in Christchurch, Canterbury. Specializing in cheating partner investigations and bug sweeping services. Modern approach with complete discretion throughout South Island NZ.'
 
 export interface SEOConfig {
   title?: string
@@ -75,8 +75,8 @@ export function generateMetadata({
       'private detective',
       'cheating partner investigation',
       'infidelity investigator',
-      'school zoning investigation',
-      'address verification',
+      'bug sweeping',
+      'hidden camera detection',
       'investigation services',
       'surveillance',
       'background checks',
@@ -89,7 +89,7 @@ export function generateMetadata({
       'confidential investigation',
       'evidence gathering',
       'matrimonial investigation',
-      'education sector investigation',
+      'counter surveillance',
       'South Island investigator',
       'modern investigation services'
     ],
@@ -101,14 +101,14 @@ export function generateMetadata({
 
 // Predefined metadata for common pages
 export const homeMetadata = generateMetadata({
-  title: 'Cheating Partner & School Zoning Investigations | Christchurch',
+  title: 'Cheating Partner & Bug Sweeping Christchurch Investigations',
   description: 'Specialised private investigators in hidden camera bug sweeping, cheating partner investigations, and Privacy Certification, delivering reassurance where privacy and trust matter.',
   path: '/',
 })
 
 export const servicesMetadata = generateMetadata({
   title: 'Private Investigation Services | Christchurch Canterbury',
-  description: 'Christchurch private investigator specializing in cheating partner investigations and school zoning verification. Professional surveillance, background checks, and confidential investigation services throughout Canterbury.',
+  description: 'Christchurch private investigator specializing in cheating partner investigations and bug sweeping services. Professional surveillance, background checks, and confidential investigation services throughout Canterbury.',
   path: '/services',
 })
 
@@ -128,4 +128,10 @@ export const faqMetadata = generateMetadata({
   title: 'Frequently Asked Questions',
   description: 'Common questions about private investigation services in New Zealand. Learn about our process, costs, legal requirements, and what to expect from professional investigation services.',
   path: '/faq',
+})
+
+export const privacyCertificationMetadata = generateMetadata({
+  title: 'Hidden Camera Detection NZ | Privacy Certification & Bug Sweeps',
+  description: 'Professional hidden camera detection and privacy certification in Christchurch, Canterbury. TSCM inspection and bug sweep services using BugHunter Pro equipment. Licensed PI, independent reporting.',
+  path: '/privacy-certification',
 })

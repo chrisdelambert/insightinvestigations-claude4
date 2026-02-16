@@ -6,10 +6,10 @@ import Link from 'next/link'
 import Image from 'next/image'
 
 const whoIsItFor = [
-  'Gyms, fitness centres, and wellness facilities',
-  'Short-term accommodation providers and Airbnb hosts',
-  'Hotels, motels, and serviced apartments',
-  'Corporate offices and shared workspaces',
+  'Gyms, fitness centres, and wellness facilities — privacy audits for businesses',
+  'Short-term accommodation providers and Airbnb hosts — Airbnb hidden camera detection',
+  'Hotels, motels, and serviced apartments — accommodation hidden camera checks',
+  'Corporate offices and shared workspaces — workplace privacy inspection',
   'Property managers and commercial landlords',
   'Legal, medical, counselling, and advisory practices',
 ]
@@ -30,8 +30,8 @@ const staffBenefits = [
 ]
 
 const detectionCapabilities = [
-  'Hidden wireless cameras',
-  'Covert microphones and listening devices',
+  'Hidden wireless cameras and covert listening devices',
+  'Covert microphones and audio recording devices',
   'Wi-Fi, Bluetooth, and cellular-based transmitters',
   'Active GPS tracking devices that transmit via cellular or radio-frequency signals',
 ]
@@ -106,7 +106,7 @@ export default function PrivacyCertificationPage() {
             transition={{ duration: 0.8, delay: 0.3 }}
           >
             <p className="text-gray-300 leading-relaxed mb-6">
-              People are more alert to privacy risks than ever before. Surveys consistently show that a majority of people are more concerned about privacy now than they were a few years ago, and that a significant proportion worry about hidden cameras or recording devices in places where they reasonably expect privacy — such as gyms, accommodation, workplaces, and meeting spaces.
+              People are more alert to privacy risks than ever before. Surveys consistently show that a majority of people are more concerned about privacy now than they were a few years ago, and that a significant proportion worry about hidden cameras or recording devices in places where they reasonably expect privacy — such as gyms, accommodation, workplaces, and meeting spaces. For businesses in Christchurch, Canterbury, and across New Zealand, hidden camera detection is no longer optional — it's expected.
             </p>
             <p className="text-gray-300 leading-relaxed mb-6">
               For businesses, those concerns often surface as questions, assumptions, and sometimes allegations.
@@ -238,7 +238,7 @@ export default function PrivacyCertificationPage() {
           >
             <h2 className="text-2xl font-bold text-white mb-6 font-serif">How Privacy Certification Is Achieved</h2>
             <p className="text-gray-300 leading-relaxed mb-6">
-              Privacy Certification is based on a professional bug sweep carried out by a licensed Private Investigator. Inspections combine physical examination, investigative judgement, and specialist electronic counter-surveillance equipment, including the BugHunter Pro. This equipment is designed to detect active signals from covert surveillance devices such as:
+              Privacy Certification is based on a professional bug sweep carried out by a licensed Private Investigator operating in Christchurch and throughout Canterbury. Our TSCM inspection process combines physical examination, RF scanning for surveillance devices, investigative judgement, and specialist electronic counter-surveillance equipment, including the BugHunter Pro. This equipment is designed to detect active signals from covert surveillance devices such as:
             </p>
             <ul className="space-y-3 mb-6">
               {detectionCapabilities.map((item, index) => (
@@ -323,7 +323,7 @@ export default function PrivacyCertificationPage() {
           >
             <h2 className="text-2xl font-bold text-white mb-6 font-serif">A Professional, Measured Approach</h2>
             <p className="text-gray-300 leading-relaxed mb-6">
-              Insight Investigations provides Privacy Certification as part of a licensed investigative practice. We do not rely on exaggerated claims or guarantees. Our role is to inspect, document, and report — lawfully, independently, and professionally.
+              Insight Investigations provides bug sweep services NZ-wide as part of a licensed investigative practice operating in Christchurch and throughout New Zealand. Our electronic counter-surveillance and TSCM inspections are conducted with specialist equipment, independent reporting, and a confidential process. We do not rely on exaggerated claims or guarantees. Our role is to inspect, document, and report — lawfully, independently, and professionally.
             </p>
             <p className="text-white font-medium text-lg">
               The result is reassurance you can stand behind, and confidence your customers and staff can rely on.
