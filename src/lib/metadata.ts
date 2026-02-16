@@ -39,12 +39,13 @@ export function generateMetadata({
       telephone: false,
     },
     metadataBase: new URL(siteUrl),
+    icons: {
+      icon: '/favicon.png',
+      apple: '/apple-touch-icon.png',
+    },
+    themeColor: '#0b0b0b',
     alternates: {
       canonical: url,
-      languages: {
-        'en-NZ': url,
-        'en': url,
-      },
     },
     openGraph: {
       title: fullTitle,
@@ -69,33 +70,31 @@ export function generateMetadata({
       images: [imageUrl],
       creator: '@insightinvestigations',
     },
-    robots: noIndex ? 'noindex, nofollow' : 'index, follow',
+    robots: noIndex
+      ? { index: false, follow: false }
+      : {
+          index: true,
+          follow: true,
+          googleBot: {
+            index: true,
+            follow: true,
+            'max-image-preview': 'large' as const,
+            'max-snippet': -1,
+            'max-video-preview': -1,
+          },
+        },
     keywords: [
-      'private investigator',
-      'private detective',
+      'private investigator Christchurch',
       'cheating partner investigation',
-      'infidelity investigator',
       'bug sweeping',
       'hidden camera detection',
-      'investigation services',
       'surveillance',
       'background checks',
-      'missing persons',
-      'Christchurch',
       'Canterbury',
       'New Zealand',
-      'licensed investigator',
-      'professional investigation',
-      'confidential investigation',
-      'evidence gathering',
-      'matrimonial investigation',
-      'counter surveillance',
-      'South Island investigator',
-      'modern investigation services'
     ],
     classification: 'business',
     category: 'Investigation Services',
-    ...(noIndex && { robots: 'noindex, nofollow' }),
   }
 }
 
