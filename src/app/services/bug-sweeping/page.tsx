@@ -57,6 +57,24 @@ export default function BugSweepingPage() {
               >
                 {service.description}
               </motion.p>
+              <motion.blockquote
+                className="mt-8 border-l-4 border-gray-500 pl-6 text-lg italic text-gray-300"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.4 }}
+              >
+                &ldquo;Every time I took a shower, I thought: is he watching me?&rdquo;
+              </motion.blockquote>
+              <motion.p
+                className="mt-6 text-base leading-7 text-secondary"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.6 }}
+              >
+                For some people, this thought doesn&apos;t go away.<br />
+                It follows them from room to room, turning what should feel safe into something uncertain.<br />
+                That&apos;s usually the point where they decide to get answers.
+              </motion.p>
             </div>
           </div>
         </div>
@@ -72,7 +90,19 @@ export default function BugSweepingPage() {
             transition={{ duration: 0.8 }}
           >
             <div className="lg:sticky lg:top-24">
-              <div className="relative mb-8 overflow-hidden rounded-xl bg-background p-8">
+              <div className="relative mb-8 overflow-hidden rounded-xl">
+                <Image
+                  src="/images/bug-sweeping-hero.png"
+                  alt="Bug Sweeping - Protecting Your Privacy"
+                  width={600}
+                  height={750}
+                  className="w-full h-auto object-cover rounded-xl"
+                />
+              </div>
+              <p className="mt-4 text-base font-semibold leading-7 text-accent">{service.description}</p>
+              <p className="mt-6 text-base leading-7 text-secondary">{service.longDescription}</p>
+              <p className="mt-6 text-base font-semibold leading-7 text-foreground">Bug Sweeping is priced from just $200 plus GST.</p>
+              <div className="relative my-8 overflow-hidden rounded-xl bg-background p-8">
                 <Image
                   src={service.image}
                   alt={service.name}
@@ -81,8 +111,6 @@ export default function BugSweepingPage() {
                   className="w-full h-auto object-contain"
                 />
               </div>
-              <p className="mt-4 text-xl text-accent">{service.description}</p>
-              <p className="mt-6 text-base leading-7 text-secondary">{service.longDescription}</p>
               <div className="mt-10">
                 <Link
                   href="/contact"

@@ -8,6 +8,17 @@ import { CalendarDaysIcon, ArrowRightIcon } from '@heroicons/react/24/outline'
 
 const blogPosts = [
   {
+    id: 4,
+    slug: 'watching-chloe',
+    title: 'Watching Chloe',
+    subtitle: 'A story about suspicion, fear, and the moment everything changed.',
+    excerpt: 'He seemed to know what she was wearing, when she was going out, even how she looked. At first she tried to explain it away. Coincidence. Guesswork. But the feeling didn\'t go away. It followed her into her own home. That\'s when she called us.',
+    date: '2026-04-21',
+    readTime: '5 min read',
+    image: '/images/Watching Chloe.png',
+    category: 'Privacy & Security'
+  },
+  {
     id: 3,
     slug: 'reconnecting-the-missing-pieces',
     title: 'Reconnecting the Missing Pieces',

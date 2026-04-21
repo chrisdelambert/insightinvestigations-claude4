@@ -82,6 +82,7 @@ export default function FindingPeoplePage() {
               </div>
               <p className="mt-4 text-xl text-accent">{service.description}</p>
               <p className="mt-6 text-base leading-7 text-secondary">{service.longDescription}</p>
+              <p className="mt-6 text-base font-semibold leading-7 text-foreground">Find someone from just $200 plus GST</p>
               <div className="mt-10">
                 <Link
                   href="/contact"

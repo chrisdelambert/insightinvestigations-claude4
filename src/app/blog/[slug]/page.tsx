@@ -5,14 +5,68 @@ import { motion } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
-import { 
-  CalendarDaysIcon, 
-  ClockIcon, 
+import {
+  CalendarDaysIcon,
+  ClockIcon,
   ArrowLeftIcon,
-  ArrowRightIcon 
+  ArrowRightIcon
 } from '@heroicons/react/24/outline'
+import { BlogPostSchema } from '../../../components/structured-data/BlogPostSchema'
+import { getBlogPostMeta } from '../../../lib/blog-data'
 
 const blogPosts = {
+  'watching-chloe': {
+    id: 4,
+    slug: 'watching-chloe',
+    title: 'Watching Chloe',
+    subtitle: 'A story about suspicion, fear, and the moment everything changed.',
+    date: '2026-04-21',
+    readTime: '5 min read',
+    image: '/images/Watching Chloe.png',
+    category: 'Privacy & Security',
+    serviceLink: '/services/bug-sweeping',
+    content: `
+I didn't think he would go that far. Even after everything, I told myself there were lines he wouldn't cross. But then the messages started.
+
+He'd message commenting on what I was wearing, and he seemed to know when I was going out with friends. There were even texts about my weight and how "trim" I looked. At first, I thought he was stalking me — waiting outside my house, or even my work. Then I tried to explain it away. Mutual friends talking. Guesswork. Coincidence. Anything that made more sense than the alternative.
+
+But the feeling didn't go away. It followed me — into my house, into my car. And then the thought came, again and again.
+
+**Every time I took a shower, I thought: *Is he watching me?***
+
+That's when everything changed. I stopped feeling comfortable in my own space. I started noticing everything. Power points. Lights. Anything that could be… something else. And even when I didn't find anything, it didn't help. Because I had no idea what I was actually looking for.
+
+I didn't want to be wrong. But I didn't want to be right either. Because if I was right… What does that even mean?
+
+I live alone. I always have. I'd leave internal doors open without thinking. Why wouldn't I? No one could see me — at least, that's what I believed. I'd walk around in a towel. Lie in the sun in my living room in my underwear. Just normal things people do when they live alone.
+
+When I first made contact, the investigator suggested we talk outside, in the driveway. At the time, it felt strange. But it made perfect sense. If there was something listening inside, there was no point talking about it in there.
+
+On the day he arrived, he carried a small, sturdy case. I caught a glimpse of the equipment inside — it looked like something from outer space.
+
+He stepped inside without a word and began moving through the house. Slowly. Methodically. Scanning every inch. Not a sound. Not a single wasted movement. He checked places I hadn't even considered.
+
+I stood there, heart pounding through the agonising wait as he moved from room to room.
+
+Then, in the hallway, he suddenly stopped.
+
+He was looking up at the smoke alarm.
+
+I watched as he raised his torch and leaned in closer… and closer… and closer.
+
+Then he turned.
+
+His eyes locked onto mine.
+
+**And in that instant, everything seemed to stop…**
+
+---
+
+**If something in this story feels familiar — if you've had that same thought, that same feeling — you're not imagining it. And you don't have to figure it out alone.**
+
+Contact [Insight Investigations](/) for a confidential, no-obligation conversation about our [professional bug sweeping services](/services/bug-sweeping). We use specialist TSCM equipment to detect hidden cameras, microphones, and tracking devices — so you can feel safe in your own space again.
+    `
+  },
   'reconnecting-the-missing-pieces': {
     id: 3,
     slug: 'reconnecting-the-missing-pieces',
@@ -267,9 +321,11 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
       }
       if (paragraph.startsWith('**') && paragraph.endsWith('**')) {
         return (
-          <p key={index} className="text-lg font-semibold text-white mb-4 text-center">
-            {paragraph.replace(/\*\*(.*)\*\*/, '$1')}
-          </p>
+          <p key={index} className="text-lg font-semibold text-white mb-4 text-center"
+            dangerouslySetInnerHTML={{
+              __html: paragraph.replace(/\*\*(.*)\*\*/, '$1').replace(/\*(.*?)\*/g, '<em>$1</em>')
+            }}
+          />
         )
       }
       if (paragraph.startsWith('• ')) {
@@ -312,6 +368,18 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
 
   return (
     <div className="relative isolate min-h-screen bg-background pt-20">
+      {(() => {
+        const meta = getBlogPostMeta(params.slug)
+        return meta ? (
+          <BlogPostSchema
+            title={meta.title}
+            description={meta.excerpt}
+            slug={meta.slug}
+            date={meta.date}
+            image={meta.image}
+          />
+        ) : null
+      })()}
       <div className="mx-auto max-w-4xl px-6 py-12 lg:px-8">
         {/* Breadcrumb */}
         <motion.div

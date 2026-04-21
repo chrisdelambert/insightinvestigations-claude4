@@ -422,7 +422,24 @@ export default function Home() {
             </div>
           </motion.div>
 
-          <motion.div 
+          {/* Testimonial */}
+          <motion.div
+            className="mx-auto mt-16 max-w-3xl"
+            initial={{ opacity: 0, y: 20 }}
+            animate={aboutInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+            transition={{ duration: 0.6, delay: 0.5 }}
+          >
+            <blockquote className="bg-gray-800 border border-gray-700 rounded-2xl p-10 text-center">
+              <p className="text-lg italic text-gray-300 leading-relaxed">
+                &ldquo;I had a truly positive experience with Insight Investigations. Luke was professional, discreet, and took the time to discuss a range of options with me.  Most of all, he showed empathy for my situation. I felt well looked after throughout the process, and he made sure I was comfortable. A genuinely supportive and high-quality service.&rdquo;
+              </p>
+              <footer className="mt-6 text-base font-semibold text-white">
+                George &ndash; 46
+              </footer>
+            </blockquote>
+          </motion.div>
+
+          <motion.div
             className="mx-auto mt-16 max-w-2xl text-center"
             initial={{ opacity: 0, y: 20 }}
             animate={aboutInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
