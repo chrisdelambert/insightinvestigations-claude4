@@ -58,7 +58,7 @@ export default function BugSweepingPage() {
                 {service.description}
               </motion.p>
               <motion.blockquote
-                className="mt-8 border-l-4 border-gray-500 pl-6 text-lg italic text-gray-300"
+                className="mt-8 text-lg italic text-gray-300"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
@@ -102,13 +102,13 @@ export default function BugSweepingPage() {
               <p className="mt-4 text-base font-semibold leading-7 text-accent">{service.description}</p>
               <p className="mt-6 text-base leading-7 text-secondary">{service.longDescription}</p>
               <p className="mt-6 text-base font-semibold leading-7 text-foreground">Bug Sweeping is priced from just $200 plus GST.</p>
-              <div className="relative my-8 overflow-hidden rounded-xl bg-background p-8">
+              <div className="relative my-8 flex items-center justify-center overflow-hidden rounded-xl bg-background p-8">
                 <Image
                   src={service.image}
                   alt={service.name}
                   width={600}
                   height={400}
-                  className="w-full h-auto object-contain"
+                  className="mx-auto h-auto w-full max-w-md object-contain"
                 />
               </div>
               <div className="mt-10">
