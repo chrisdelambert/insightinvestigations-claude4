@@ -20,6 +20,14 @@ const service = {
     'Summary report outlining what was checked and the results of the sweep.',
     'Security advice going forward.',
   ],
+  whoUsesThisService: [
+    'Homeowners concerned about hidden cameras',
+    'Individuals experiencing stalking or harassment',
+    'Businesses concerned about information leaks',
+    'Law firms requiring confidential meeting protection',
+    'Executives and professionals seeking privacy reassurance',
+    'Vehicle tracker concerns',
+  ],
   useCases: [
     'Staying in an Airbnb, motel, or short-term rental and want to be sure there are no hidden cameras.',
     'Moving into a new rental, or commercial space and need peace of mind before you settle in.',
@@ -65,16 +73,17 @@ export default function BugSweepingPage() {
               >
                 &ldquo;Every time I took a shower, I thought: is he watching me?&rdquo;
               </motion.blockquote>
-              <motion.p
-                className="mt-6 text-base leading-7 text-secondary"
+              <motion.div
+                className="mt-6 space-y-4 text-base leading-7 text-secondary"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.6 }}
               >
-                For some people, this thought doesn&apos;t go away.<br />
-                It follows them from room to room, turning what should feel safe into something uncertain.<br />
-                That&apos;s usually the point where they decide to get answers.
-              </motion.p>
+                <p>For some people, this thought never really leaves.</p>
+                <p>For others, it begins after a sensitive meeting, a confidential discussion, or the feeling that someone knows more than they should.</p>
+                <p>Whether at home or in the workplace, uncertainty changes the way people think, speak, and act.</p>
+                <p>That&rsquo;s usually the point where they decide to get answers.</p>
+              </motion.div>
             </div>
           </div>
         </div>
@@ -90,14 +99,25 @@ export default function BugSweepingPage() {
             transition={{ duration: 0.8 }}
           >
             <div className="lg:sticky lg:top-24">
-              <div className="relative mb-8 overflow-hidden rounded-xl">
-                <Image
-                  src="/images/bug-sweeping-hero.png"
-                  alt="Bug Sweeping - Protecting Your Privacy"
-                  width={600}
-                  height={750}
-                  className="w-full h-auto object-cover rounded-xl"
-                />
+              <div className="relative mb-8 grid grid-cols-1 gap-4 sm:grid-cols-2">
+                <div className="overflow-hidden rounded-xl">
+                  <Image
+                    src="/images/bug-sweeping-hero.png"
+                    alt="Bug Sweeping - Protecting Your Privacy"
+                    width={600}
+                    height={750}
+                    className="w-full h-auto object-cover rounded-xl"
+                  />
+                </div>
+                <div className="overflow-hidden rounded-xl">
+                  <Image
+                    src="/images/Corporate Bug Sweeping Image for landing page.png"
+                    alt="Corporate Bug Sweeping - Privacy, Confidentiality, Protection"
+                    width={600}
+                    height={750}
+                    className="w-full h-auto object-cover rounded-xl"
+                  />
+                </div>
               </div>
               <p className="mt-4 text-base font-semibold leading-7 text-accent">{service.description}</p>
               <p className="mt-6 text-base leading-7 text-secondary">{service.longDescription}</p>
@@ -128,6 +148,16 @@ export default function BugSweepingPage() {
                     <ul role="list" className="list-disc space-y-4 pl-8 text-base leading-7 text-secondary">
                       {service.features.map((feature) => (
                         <li key={feature}>{feature}</li>
+                      ))}
+                    </ul>
+                  </dd>
+                </div>
+                <div>
+                  <dt className="text-base font-semibold leading-7 text-accent">Who Uses This Service</dt>
+                  <dd className="mt-4">
+                    <ul role="list" className="list-disc space-y-4 pl-8 text-base leading-7 text-secondary">
+                      {service.whoUsesThisService.map((item) => (
+                        <li key={item}>{item}</li>
                       ))}
                     </ul>
                   </dd>

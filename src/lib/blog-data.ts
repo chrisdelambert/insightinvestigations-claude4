@@ -13,6 +13,18 @@ export interface BlogPostMeta {
 
 export const blogPostsMeta: BlogPostMeta[] = [
   {
+    id: 5,
+    slug: 'the-boardroom',
+    title: 'The Boardroom',
+    subtitle: 'When privacy quietly disappears from the room where it matters most.',
+    excerpt: 'It started with something small. A detail that shouldn\'t have been known. Something only ever discussed behind closed doors. At first he brushed it off — businesses are busy places, people talk. But when it happened again, word for word from a boardroom meeting, it stopped feeling like a coincidence.',
+    date: '2026-06-03',
+    readTime: '5 min read',
+    image: '/images/Corporate Bug Sweeping Blog Image.png',
+    category: 'Privacy & Security',
+    keywords: ['corporate bug sweeping', 'boardroom security', 'TSCM', 'corporate espionage', 'information leaks', 'executive privacy', 'Christchurch', 'New Zealand'],
+  },
+  {
     id: 4,
     slug: 'watching-chloe',
     title: 'Watching Chloe',

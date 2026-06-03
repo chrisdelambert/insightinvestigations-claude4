@@ -15,6 +15,110 @@ import { BlogPostSchema } from '../../../components/structured-data/BlogPostSche
 import { getBlogPostMeta } from '../../../lib/blog-data'
 
 const blogPosts = {
+  'the-boardroom': {
+    id: 5,
+    slug: 'the-boardroom',
+    title: 'The Boardroom',
+    subtitle: 'When privacy quietly disappears from the room where it matters most.',
+    date: '2026-06-03',
+    readTime: '5 min read',
+    image: '/images/Corporate Bug Sweeping Blog Image.png',
+    category: 'Privacy & Security',
+    serviceLink: '/services/bug-sweeping',
+    content: `
+It started with something small. Nothing that immediately felt like a problem.
+
+Just a comment - made casually - by someone outside the business.
+
+A detail that shouldn't have been known. Something that had only ever been discussed behind closed doors.
+
+At the time, he brushed it off.
+
+Businesses are busy places. People talk. Information moves. Sometimes further than it should.
+
+Still… it stayed with him.
+
+A few weeks later, it happened again.
+
+This time, it wasn't just a vague reference. It was specific. A conversation from a management meeting - one that had taken place in the boardroom - was repeated almost word for word by someone who had no business knowing any of it.
+
+That's when it stopped feeling like a coincidence.
+
+On the drive home, he replayed everything.
+
+Who was in the room? Who spoke? Who had access?
+
+The obvious answer was simple: someone had talked. That's usually how these things happen.
+
+But the more he thought about it, the less comfortable that explanation felt.
+
+The office wasn't large.
+
+The boardroom sat at the end of the hallway, overlooking the car park. It was where the difficult conversations happened - staffing issues. Contracts. Legal matters. Strategy.
+
+It had always felt private.
+
+Now… it didn't.
+
+Over the following weeks, something shifted.
+
+You could feel it, even if no one said it out loud.
+
+Voices dropped when sensitive topics came up. The boardroom door was checked - then checked again. People who were usually open became careful. Guarded.
+
+Conversations started happening in hallways… or not at all.
+
+No one wanted to be the first to say it.
+
+But everyone was thinking the same thing.
+
+**What if someone was listening?**
+
+That was the worst part.
+
+There was no proof.
+
+No obvious device.
+
+No unfamiliar vehicle parked outside.
+
+No dramatic moment where everything suddenly made sense.
+
+Just a feeling.
+
+A growing, quiet doubt that something wasn't right.
+
+And over time, that doubt started to spread.
+
+Conversations were shortened.
+
+Decisions were delayed.
+
+Information was shared with fewer people.
+
+Trust began to disappear.
+
+And once that starts… it doesn't stay contained to one room.
+
+The office itself hadn't changed.
+
+Same reception. Same desks. Same boardroom at the end of the hall.
+
+But something fundamental was gone.
+
+The sense of privacy.
+
+The sense of control.
+
+That's usually the point where organizations stop guessing… and decide to find out what's really going on.
+
+---
+
+**If something in this story feels familiar - if you've had that same thought, that same feeling — you might not be imagining it. And you don't have to figure it out alone.**
+
+Contact [Insight Investigations](/) for a confidential, no-obligation conversation about our [professional bug sweeping services](/services/bug-sweeping). We use specialist TSCM equipment to detect hidden cameras, microphones, and tracking devices — so you can feel safe in your own space again.
+    `
+  },
   'watching-chloe': {
     id: 4,
     slug: 'watching-chloe',

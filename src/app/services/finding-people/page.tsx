@@ -27,6 +27,13 @@ const service = {
     'Locating someone for legal or estate matters',
     'Helping with adoption-related searches',
   ],
+  whyChooseUs: [
+    'Licensed New Zealand Private Investigator',
+    'Discreet and confidential enquiries',
+    'Nationwide tracing capability',
+    'Experienced in complex investigations',
+    'Regularly engaged in professional investigative work',
+  ],
 }
 
 export default function FindingPeoplePage() {
@@ -114,10 +121,38 @@ export default function FindingPeoplePage() {
                     </ul>
                   </dd>
                 </div>
+                <div>
+                  <dt className="text-base font-semibold leading-7 text-accent">Why choose Insight Investigations?</dt>
+                  <dd className="mt-4">
+                    <ul role="list" className="list-disc space-y-4 pl-8 text-base leading-7 text-secondary">
+                      {service.whyChooseUs.map((item) => (
+                        <li key={item}>{item}</li>
+                      ))}
+                    </ul>
+                  </dd>
+                </div>
               </dl>
             </div>
           </motion.div>
         </div>
+      </div>
+
+      {/* Testimonial section */}
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <motion.figure
+          className="mx-auto max-w-3xl rounded-2xl border border-gray-700 bg-gray-800/50 p-8 sm:p-12"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+        >
+          <blockquote className="text-lg italic leading-8 text-secondary sm:text-xl sm:leading-9">
+            &ldquo;I&rsquo;d spent months trying to locate someone who owed me money. Calls went unanswered, emails were ignored, and every lead seemed to go nowhere. Friends told me to write it off, but I wanted answers. I contacted Insight Investigations and provided the information I had. Within days, they were able to identify the person&rsquo;s current whereabouts, giving me the information I needed to decide my next step&rdquo;
+          </blockquote>
+          <figcaption className="mt-6 text-base font-semibold text-accent">
+            — Malcolm R
+          </figcaption>
+        </motion.figure>
       </div>
 
       {/* CTA section */}
