@@ -100,8 +100,8 @@ export function generateMetadata({
 
 // Predefined metadata for common pages
 export const homeMetadata = generateMetadata({
-  title: 'Cheating Partner & Bug Sweeping Christchurch Investigations',
-  description: 'Specialised private investigators in hidden camera bug sweeping, cheating partner investigations, and Privacy Certification, delivering reassurance where privacy and trust matter.',
+  title: 'Private Investigator Christchurch | Bug Sweeping, Finding People & Investigations',
+  description: 'Licensed Christchurch private investigators specialising in bug sweeping, finding people, cheating partners,  and family law investigations. Discreet private investigations throughout Canterbury and the South Island.',
   path: '/',
 })
 

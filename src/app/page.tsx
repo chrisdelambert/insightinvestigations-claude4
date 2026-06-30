@@ -138,8 +138,7 @@ export default function Home() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.7 }}
             >
-              Based in Christchurch, we specialise in hidden camera bug sweeping, cheating partner investigations, and Privacy Certification services throughout Canterbury.
-              When you need answers and reassurance, we provide clarity with complete confidentiality and a modern, professional approach.
+              Licensed Christchurch private investigators specialising in bug sweeping, finding people, cheating partners,  and family law investigations-discreet private investigations throughout Canterbury and the South Island.
             </motion.p>
             
             <motion.div
@@ -202,7 +201,7 @@ export default function Home() {
               Professional Investigation Services
             </p>
             <p className="mt-6 text-xl leading-8 text-secondary">
-              Whether you need clarity in personal matters, support for schools or employers, or evidence for legal purposes, we're here to help.
+              We specialise in bug sweeping, finding people, cheating partner investigations, and family law investigations throughout Christchurch and the South Island.
             </p>
           </motion.div>
           
@@ -319,7 +318,7 @@ export default function Home() {
               What Sets Us Apart
             </p>
             <p className="mt-6 text-xl leading-8 text-gray-300">
-              We specialise in cheating partner investigations, bug sweeping, and school zoning verification. We are the only investigators based in the South Island with bug sweeping equipment.
+              We specialise in bug sweeping, finding people, cheating partner investigations, and family law investigations throughout Christchurch and the South Island.
             </p>
           </motion.div>
 
